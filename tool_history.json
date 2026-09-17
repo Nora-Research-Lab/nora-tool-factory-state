@@ -1,0 +1,13 @@
+[
+  {
+    "tool_name": "USDA Soil Texture Triangle Classifier",
+    "industry": "Soil Science",
+    "one_line_pitch": "For agronomists and soil scientists: enter sand, silt, and clay percentages and instantly get the USDA textural class and a triangle plot.",
+    "description": "The app classifies a soil sample into its USDA textural class from laboratory particle-size percentages. The user provides three numeric inputs: percent sand, percent silt, and percent clay, each between 0 and 100. The Gradio UI uses a left panel with three Number inputs labeled Sand %, Silt %, and Clay %, a Classify button, and a note that values should sum to 100. The app validates that the three values sum to 100 within a tolerance of 0.5 percentage points; if not, it normalizes them by dividing each value by the total so the soil texture triangle logic still works, and displays a note that normalization was applied. The core logic is a deterministic ternary polygon lookup. The 12 USDA texture classes are stored as closed polygons in ternary coordinates: sand, loamy sand, sandy loam, loam, silt loam, silt, sandy clay loam, clay loam, silty clay loam, sandy clay, silty clay, and clay. Each polygon follows the standard USDA texture triangle boundary definitions. The user point is converted to ternary coordinates and tested against each polygon using a point-in-polygon algorithm in a fixed priority order. The first matching polygon returns the class name. The right panel shows two outputs: a text output with the USDA class name, and a Plotly ternary chart. The chart draws the standard USDA texture triangle with colored class polygons and a red marker at the user sample point. If inputs are invalid, negative, or greater than 100, the tool shows a clear error message and does not draw the point. No AI or machine learning component is used; this is a standards-based classification tool.",
+    "image_prompt": "A wide banner illustration of a clean scientific soil texture triangle with colored zones and a single red sample point, set against a minimal laboratory-themed background with a soil sample jar and texture gradient; flat professional vector style, no text.",
+    "slug": "usda-soil-texture-triangle-classifier",
+    "module_name": "usda_soil_texture_triangle_classifier",
+    "repo_url": "https://github.com/Nora-Research-Lab/usda-soil-texture-triangle-classifier",
+    "shipped_at": "2026-09-17T23:13:02.955456Z"
+  }
+]
