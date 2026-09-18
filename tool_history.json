@@ -9,5 +9,16 @@
     "module_name": "usda_soil_texture_triangle_classifier",
     "repo_url": "https://github.com/Nora-Research-Lab/usda-soil-texture-triangle-classifier",
     "shipped_at": "2026-09-17T23:13:02.955456Z"
+  },
+  {
+    "tool_name": "Theis Drawdown Curve Calculator",
+    "industry": "Hydrogeology / Groundwater",
+    "one_line_pitch": "For hydrogeologists and groundwater engineers: enter aquifer and pumping parameters to predict drawdown over time at a single observation well and export the curve.",
+    "description": "The user provides five physical inputs and one display setting. Inputs: transmissivity T in m^2/day (positive, default 100), storativity S dimensionless (default 0.0001, allowed 1e-6 to 1e-1), pumping rate Q in m^3/day (positive, default 500), radial distance from pumping well to observation point r in meters (positive, default 50), maximum pumping time t_max in days (positive, default 1), and number of curve points N via an integer slider from 20 to 200 (default 80). The app generates N logarithmically spaced time values from max(1e-4, t_max/1000) to t_max. For each time t, it computes the auxiliary variable u = (r^2 * S) / (4 * T * t). It then evaluates the Theis well function W(u) using scipy.special.exp1(u), which gives the exact exponential integral for this non-negative argument. If SciPy is unavailable, it falls back to the series approximation W(u) = -0.5772 - ln(u) + u - u^2/(2*2!) + u^3/(3*3!) - ... until terms are smaller than 1e-9. Drawdown s in meters is calculated as s = (Q / (4 * pi * T)) * W(u). The Gradio interface uses a single column with clearly labeled numeric inputs for T, S, Q, r, and t_max, a slider for N, and a Calculate button. Outputs are: a Plotly line chart with log-scale x-axis for time in days and y-axis drawdown in meters; a data table showing time, u, W(u), and drawdown; and a downloadable CSV file with the same columns. If any input is invalid or r equals zero, an error message appears instead of the outputs. There is no ML component; this is a deterministic analytical well hydraulics model implemented as a clean engineering calculator.",
+    "image_prompt": "Cutaway illustration of a groundwater pumping well in a layered aquifer, showing a cone of depression in the water table, with clean blue water lines and subsurface strata, wide banner composition, professional engineering textbook style, no text.",
+    "slug": "theis-drawdown-curve-calculator",
+    "module_name": "theis_drawdown_curve_calculator",
+    "repo_url": "https://github.com/Nora-Research-Lab/theis-drawdown-curve-calculator",
+    "shipped_at": "2026-09-18T00:39:17.456657Z"
   }
 ]
