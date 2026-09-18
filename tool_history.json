@@ -31,5 +31,16 @@
     "module_name": "infinite_slope_stability_calculator",
     "repo_url": "https://github.com/Nora-Research-Lab/infinite-slope-stability-calculator",
     "shipped_at": "2026-09-18T09:48:19.309751Z"
+  },
+  {
+    "tool_name": "Bouguer Gravity Anomaly Calculator",
+    "industry": "Geophysics",
+    "one_line_pitch": "For geophysicists and exploration geologists: enter latitude, elevation, observed gravity, and density to get theoretical gravity and free-air/Bouguer anomalies.",
+    "description": "This tool calculates gravity corrections and anomalies for a single ground gravity station. The user provides five inputs: latitude in decimal degrees, station elevation above sea level in metres, observed gravity in mGal, reduction density in g/cm³ (default 2.67), and an optional terrain correction in mGal (default 0.0). The core logic is deterministic and follows standard gravity reduction steps. First, convert latitude to radians and compute theoretical sea-level gravity using the International Gravity Formula 1967: g_theory = 978031.846 * (1 + 0.005278895*sin²φ + 0.000023462*sin⁴φ), reported in mGal. Second, compute the free-air correction as 0.3086 * h mGal. Third, compute the free-air anomaly: FAA = observed_gravity - g_theory + free-air_correction. Fourth, compute the simple Bouguer correction as 0.04193 * density * h mGal. Fifth, compute the simple Bouguer anomaly: SBA = FAA - Bouguer_correction. Finally, if a terrain correction is supplied, compute the complete Bouguer anomaly: CBA = SBA + terrain_correction. The Gradio interface should be a single-column layout with five labelled Number inputs, a Calculate button, and a results DataFrame output showing each parameter and its value rounded to three decimal places: theoretical gravity, free-air correction, Bouguer correction, free-air anomaly, simple Bouguer anomaly, and complete Bouguer anomaly. All output values are in mGal. No AI/ML component is used; the tool is a clean geophysical calculation.",
+    "image_prompt": "A clean professional wide banner illustration of a gravity survey scene: a geophysicist in field clothing adjusts a gravimeter on a tripod over rocky terrain, with faint gravity contour lines and a simple layered earth cross-section in the background, flat scientific vector style, muted earth tones, no text, no logos, no words.",
+    "slug": "bouguer-gravity-anomaly-calculator",
+    "module_name": "bouguer_gravity_anomaly_calculator",
+    "repo_url": "https://github.com/Nora-Research-Lab/bouguer-gravity-anomaly-calculator",
+    "shipped_at": "2026-09-18T13:55:10.549489Z"
   }
 ]
