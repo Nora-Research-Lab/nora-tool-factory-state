@@ -42,5 +42,16 @@
     "module_name": "bouguer_gravity_anomaly_calculator",
     "repo_url": "https://github.com/Nora-Research-Lab/bouguer-gravity-anomaly-calculator",
     "shipped_at": "2026-09-18T13:55:10.549489Z"
+  },
+  {
+    "tool_name": "Shoreline Change Rate Estimator",
+    "industry": "Coastal & Sedimentary Studies",
+    "one_line_pitch": "For coastal scientists and geomorphologists: upload shoreline position dates and distances to get end-point and linear-regression shoreline change rates with a trend plot.",
+    "description": "This tool estimates shoreline change rates from repeated shore-normal position measurements. The user uploads a CSV file with two required columns: date (YYYY-MM-DD) and position_m (numeric, metres relative to a fixed baseline). A radio input selects the convention: seaward positive or landward positive. If landward positive is selected, all position values are multiplied by -1 before analysis. The tool parses the CSV, rejects missing or non-numeric values, sorts records by date ascending, and requires at least two valid rows. Dates are converted to decimal years using year plus day-of-year divided by 365.25. Two rates are calculated. The end-point rate is (last position - first position) divided by (last decimal year - first decimal year). The linear regression rate uses ordinary least squares: slope b = sum((t_i - t_mean)*(y_i - y_mean)) / sum((t_i - t_mean)^2), intercept a = y_mean - b*t_mean, and R² = 1 - SS_residual / SS_total. The standard error of the slope and a 95% confidence interval are computed using the Student t distribution with n-2 degrees of freedom. The Gradio interface shows the file upload and convention radio on the left and results on the right. Outputs are a parsed positions table, a Matplotlib scatter plot of position versus decimal year with the regression line, and a summary text block displaying the end-point rate, linear regression rate, R², 95% confidence interval, number of points, and date range. No AI component is used; the logic is ordinary least squares regression.",
+    "image_prompt": "A clean professional wide banner illustration of a sandy coastline with survey markers, a simple measurement line extending from a baseline stake toward the water, and a subtle upward trend line over the beach, no text, no logos.",
+    "slug": "shoreline-change-rate-estimator",
+    "module_name": "shoreline_change_rate_estimator",
+    "repo_url": "https://github.com/Nora-Research-Lab/shoreline-change-rate-estimator",
+    "shipped_at": "2026-09-18T20:02:12.801641Z"
   }
 ]
