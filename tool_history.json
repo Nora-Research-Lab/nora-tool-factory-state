@@ -20,5 +20,16 @@
     "module_name": "theis_drawdown_curve_calculator",
     "repo_url": "https://github.com/Nora-Research-Lab/theis-drawdown-curve-calculator",
     "shipped_at": "2026-09-18T00:39:17.456657Z"
+  },
+  {
+    "tool_name": "Infinite Slope Stability Calculator",
+    "industry": "Geotechnical Engineering",
+    "one_line_pitch": "For geotechnical engineers and engineering geologists: enter soil, slope, and water parameters to calculate the factor of safety for an infinite slope.",
+    "description": "This tool computes the factor of safety (FS) against shallow translational sliding for an infinite slope with optional seepage parallel to the slope. The user provides six numeric inputs: effective cohesion c' (kPa, range 0–1000), effective friction angle φ' (degrees, range 0–50), slope angle β (degrees, range 0–90), soil unit weight γ (kN/m³, range 10–30), vertical depth to the potential failure plane z (m, range 0.1–100), and water height above the failure plane h_w (m, range 0 to z). A constant water unit weight γw = 9.81 kN/m³ is used. Logic: convert β and φ' to radians; compute the effective normal stress term σ'_n = (γ · z · cos²β − γw · h_w · cos²β); compute the shear stress term τ = γ · z · sinβ · cosβ; compute FS = (c' + σ'_n · tan φ') / τ. If τ is approximately zero (β = 0), set FS to 999 and report a flat-slope condition with no sliding. Classify FS as: <1.0 Unstable, 1.0–1.25 Marginal, 1.25–1.5 Fair, >1.5 Good. If h_w > z, the UI shows a validation warning and does not compute. The Gradio UI uses a Blocks layout with two columns of three labeled gr.Number inputs each, a Calculate button, and an output area containing a large gr.Number for FS (3 decimal places), a gr.Label for the classification, and a warning banner if FS < 1.0. No AI/ML component is used; this is a deterministic geotechnical calculation.",
+    "image_prompt": "Clean professional cutaway illustration of a hillside slope showing soil layers, a shallow planar failure surface, and a dashed water table, wide banner composition, muted earth tones, geotechnical engineering diagram style, no text or labels.",
+    "slug": "infinite-slope-stability-calculator",
+    "module_name": "infinite_slope_stability_calculator",
+    "repo_url": "https://github.com/Nora-Research-Lab/infinite-slope-stability-calculator",
+    "shipped_at": "2026-09-18T09:48:19.309751Z"
   }
 ]
