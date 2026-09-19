@@ -64,5 +64,16 @@
     "module_name": "seismic_moment_magnitude_calculator",
     "repo_url": "https://github.com/Nora-Research-Lab/seismic-moment-magnitude-calculator",
     "shipped_at": "2026-09-19T00:34:56.402629Z"
+  },
+  {
+    "tool_name": "REE Chondrite Normalization Plotter",
+    "industry": "Geochemistry",
+    "one_line_pitch": "For geochemists and petrologists: enter whole-rock rare-earth-element concentrations in ppm and instantly get a chondrite-normalized spider plot plus Ce and Eu anomaly ratios.",
+    "description": "This tool performs deterministic rare-earth-element (REE) normalization for whole-rock geochemical data. (a) The user provides 14 numeric inputs, all in ppm, for La, Ce, Pr, Nd, Sm, Eu, Gd, Tb, Dy, Ho, Er, Tm, Yb, and Lu. Missing or zero values are treated as invalid and should show a warning instead of a plot. (b) The core logic uses built-in CI chondrite reference values from Sun and McDonough 1989: La 0.237, Ce 0.613, Pr 0.0928, Nd 0.457, Sm 0.148, Eu 0.0563, Gd 0.199, Tb 0.0361, Dy 0.246, Ho 0.0546, Er 0.160, Tm 0.0247, Yb 0.161, Lu 0.0246. For each element, normalized value = input_ppm / chondrite_ppm. Anomaly ratios are computed as Ce/Ce* = Ce_N / sqrt(La_N * Pr_N) and Eu/Eu* = Eu_N / sqrt(Sm_N * Gd_N). (c) The Gradio interface shows a single-screen layout with 14 Number inputs grouped in rows and labelled by element symbol and ppm, a Submit button, a line plot, a data table, and a download button. (d) Outputs are a matplotlib line chart with elements ordered from La to Lu on the x-axis, normalized values on a log-scale y-axis, a horizontal reference line at 1, plus a table showing element, input ppm, and normalized value. Ce/Ce* and Eu/Eu* are displayed as text. A CSV file of the table is available for download. (e) No AI/ML component is used; the logic is a clean geochemical normalization and ratio calculation.",
+    "image_prompt": "A clean scientific illustration of a dark rocky hand sample beside a laptop screen showing a smooth plotted curve with a logarithmic y-axis, flat vector style, muted earth tones, wide banner composition, no text or labels.",
+    "slug": "ree-chondrite-normalization-plotter",
+    "module_name": "ree_chondrite_normalization_plotter",
+    "repo_url": "https://github.com/Nora-Research-Lab/ree-chondrite-normalization-plotter",
+    "shipped_at": "2026-09-19T19:06:15.076087Z"
   }
 ]
