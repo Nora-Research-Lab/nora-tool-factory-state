@@ -75,5 +75,16 @@
     "module_name": "ree_chondrite_normalization_plotter",
     "repo_url": "https://github.com/Nora-Research-Lab/ree-chondrite-normalization-plotter",
     "shipped_at": "2026-09-19T19:06:15.076087Z"
+  },
+  {
+    "tool_name": "Drill Core Recovery & RQD Calculator",
+    "industry": "Mining & Minerals",
+    "one_line_pitch": "For mining geologists and engineers: enter core run, recovered length, and intact piece totals to instantly get core recovery, RQD, and rock-quality classification.",
+    "description": "This tool computes core recovery and Rock Quality Designation (RQD) from a single diamond drill run. The user provides three positive numeric inputs in meters: (a) total drilled core run length, (b) total length of core recovered, and (c) summed length of sound, intact core pieces equal to or longer than 0.10 m. The tool validates that recovered length is not greater than the total run length and that the summed intact-piece length is not greater than recovered length. Core recovery percentage is calculated as recovered length divided by total run length, multiplied by 100. RQD percentage is calculated as the summed length of intact pieces equal to or longer than 0.10 m divided by total run length, multiplied by 100. RQD is classified using the standard Deere classification: 0–25% very poor, 25–50% poor, 50–75% fair, 75–90% good, and 90–100% excellent. Core recovery is also interpreted with practical bands: less than 75% poor, 75–90% fair, 90–95% good, and 95–100% excellent. The Gradio interface uses three numeric input boxes labeled 'Core Run Length (m)', 'Recovered Core Length (m)', and 'Sum of Intact Pieces ≥ 0.10 m (m)', a 'Calculate' button, and a results panel. Outputs include the two percentages rounded to one decimal place, the RQD classification, the core recovery classification, and a simple horizontal RQD gauge image showing the value from 0 to 100 against colored quality bands. No AI/ML component is needed; this is a deterministic domain calculation.",
+    "image_prompt": "A clean technical illustration of an open drill core box with neat rows of rock core pieces, geological hammer and field notebook nearby, warm earth tones, wide banner composition, professional geoscience style.",
+    "slug": "drill-core-recovery-rqd-calculator",
+    "module_name": "drill_core_recovery_rqd_calculator",
+    "repo_url": "https://github.com/Nora-Research-Lab/drill-core-recovery-rqd-calculator",
+    "shipped_at": "2026-09-19T23:20:45.285021Z"
   }
 ]
