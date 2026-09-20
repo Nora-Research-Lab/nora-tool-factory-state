@@ -86,5 +86,16 @@
     "module_name": "drill_core_recovery_rqd_calculator",
     "repo_url": "https://github.com/Nora-Research-Lab/drill-core-recovery-rqd-calculator",
     "shipped_at": "2026-09-19T23:20:45.285021Z"
+  },
+  {
+    "tool_name": "Geothermal Gradient & Heat Flow Calculator",
+    "industry": "Geothermal Energy",
+    "one_line_pitch": "For geothermal geologists and engineers: enter surface and bottom temperatures, depth, and rock thermal conductivity to compute the geothermal gradient and heat flow, plus an automatic gradient classification.",
+    "description": "This tool calculates the geothermal gradient and conductive heat flow from well temperature measurements and rock thermal conductivity. The user provides four numerical inputs: (1) Surface temperature (Ts, in °C, range -10 to 50), (2) Bottom temperature (Tb, in °C, range Ts to 500), (3) Depth (z, in meters, range 10 to 10000), and (4) Thermal conductivity (k, in W/m·K, range 0.1 to 5.0). Step-by-step logic: (a) Compute the geothermal gradient G = (Tb - Ts) / z, reported in °C/km by multiplying by 1000. (b) Compute conductive heat flow q = G * k (converted to consistent units: G in °C/m multiplied by k in W/m·K gives W/m²; also reported in mW/m² by multiplying by 1000). (c) Classify the gradient: <25 °C/km as 'Low', 25–35 °C/km as 'Normal', >35 °C/km as 'High' (favorable for geothermal). The Gradio UI shows four numeric inputs with labels and units, a 'Calculate' button, and three output areas: (i) a text display showing Geothermal Gradient (with classification), Heat Flow (in mW/m²), (ii) a simple matplotlib bar chart comparing the computed gradient to the normal-range band (25–35), and (iii) a downloadable CSV of inputs and outputs. Error handling: ensure Tb > Ts and z > 0, else show validation message. No AI/ML component.",
+    "image_prompt": "Cross-section of the Earth's crust with a geothermal well, showing temperature gradient colored from cool blues near surface to warm reds at depth, with arrows indicating heat flow upward; clean scientific illustration style, wide banner composition.",
+    "slug": "geothermal-gradient-heat-flow-calculator",
+    "module_name": "geothermal_gradient_heat_flow_calculator",
+    "repo_url": "https://github.com/Nora-Research-Lab/geothermal-gradient-heat-flow-calculator",
+    "shipped_at": "2026-09-20T15:04:30.196407Z"
   }
 ]
