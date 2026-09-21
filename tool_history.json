@@ -97,5 +97,16 @@
     "module_name": "geothermal_gradient_heat_flow_calculator",
     "repo_url": "https://github.com/Nora-Research-Lab/geothermal-gradient-heat-flow-calculator",
     "shipped_at": "2026-09-20T15:04:30.196407Z"
+  },
+  {
+    "tool_name": "Volumetric Oil-in-Place Estimator",
+    "industry": "Petroleum & Oil/Gas",
+    "one_line_pitch": "For petroleum geologists and reservoir engineers: enter reservoir parameters to calculate original oil in place (OOIP) in stock-tank barrels using the volumetric method.",
+    "description": "Inputs: (1) Reservoir area (acres), (2) Net pay thickness (feet), (3) Porosity (fraction, 0-1), (4) Water saturation (fraction, 0-1), (5) Formation volume factor (Bo, dimensionless, typical 1.0-2.0). All inputs are floating-point numbers with units labeled. Core calculation: OOIP (STB) = (7758 * A * h * phi * (1 - Sw)) / Bo, where 7758 is barrels per acre-foot. Step-by-step: validate all inputs >0; compute product; return OOIP with appropriate formatting (comma-separated integer). Also compute and display the oil saturation (So = 1 - Sw) for reference. UI layout: A clean single-column layout. Title at top. Inputs in a vertical column with sliders or number inputs (sliders preferred with appropriate min/max ranges: area 10-10000, thickness 5-500, porosity 0.05-0.40, Sw 0.10-0.80, Bo 1.0-2.5). Below inputs, a large 'Calculate' button. Output area below button displays: two lines — 'Estimated OOIP: X,XXX,XXX STB' and 'Oil Saturation (So): 0.XX'. No AI component; purely deterministic calculation. Optionally, a small info button explaining the 7758 constant. Output is text only, no charts.",
+    "image_prompt": "A professional illustration of an underground oil reservoir cross-section with porous rock layers, a wellbore penetrating the formation, and oil droplets shown in pore spaces. Clean technical diagram style, wide banner format.",
+    "slug": "volumetric-oil-in-place-estimator",
+    "module_name": "volumetric_oil_in_place_estimator",
+    "repo_url": "https://github.com/Nora-Research-Lab/volumetric-oil-in-place-estimator",
+    "shipped_at": "2026-09-21T00:44:36.291486Z"
   }
 ]
