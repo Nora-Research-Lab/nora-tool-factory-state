@@ -108,5 +108,16 @@
     "module_name": "volumetric_oil_in_place_estimator",
     "repo_url": "https://github.com/Nora-Research-Lab/volumetric-oil-in-place-estimator",
     "shipped_at": "2026-09-21T00:44:36.291486Z"
+  },
+  {
+    "tool_name": "Fossil Body Mass Estimator",
+    "industry": "Paleontology",
+    "one_line_pitch": "For paleontologists and fossil preparators: enter a single skeletal measurement and taxonomic group to instantly estimate an animal's body mass using published allometric equations.",
+    "description": "This tool estimates the body mass of a fossil animal from a single skeletal measurement using allometric scaling equations. The user provides: (1) a measurement type selected from a dropdown (Femur Circumference, Femur Length, Humerus Circumference, or Skull Length); (2) the measurement value in centimeters as a number input; and (3) a taxonomic group from a dropdown (Theropoda, Sauropoda, Ornithopoda, Ceratopsia, Thyreophora, other non-avian dinosaur, or Mammalia). The core logic uses published regression coefficients (e.g., from Campione & Evans 2012, Campione et al. 2014, and Anderson et al. 1985) stored in a lookup table: for each combination of measurement type and taxonomic group, the tool retrieves the intercept (a) and slope (b) for the equation log10(bodymass_kg) = a + b * log10(measurement_cm). It computes the mass estimate, then also calculates the 95% confidence interval using the standard error of the estimate for that equation. The Gradio UI presents: a dropdown for measurement type, a number box for measurement (with unit label 'cm'), a dropdown for taxonomic group, and a 'Calculate' button. The output area shows the estimated body mass in kilograms (rounded to the nearest 0.1 kg) along with the 95% confidence interval in parentheses. Below that, a text line classifies the mass into one of five bins: Very small (<10 kg), Small (10–100 kg), Medium (100–1000 kg), Large (1000–10,000 kg), or Very large (>10,000 kg). No AI/ML component is used; all logic is deterministic lookups and arithmetic. The tool runs entirely client-side in Gradio with no external API calls.",
+    "image_prompt": "A clean, professional illustration of a paleontologist holding a fossilized dinosaur femur bone next to a field notebook, with a silhouette of a large sauropod in the background. Flat vector art style, wide banner composition.",
+    "slug": "fossil-body-mass-estimator",
+    "module_name": "fossil_body_mass_estimator",
+    "repo_url": "https://github.com/Nora-Research-Lab/fossil-body-mass-estimator",
+    "shipped_at": "2026-09-22T00:04:09.325417Z"
   }
 ]
