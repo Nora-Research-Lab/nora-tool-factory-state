@@ -130,5 +130,16 @@
     "module_name": "scs_runoff_depth_calculator",
     "repo_url": "https://github.com/Nora-Research-Lab/scs-runoff-depth-calculator",
     "shipped_at": "2026-09-22T04:45:52.919325Z"
+  },
+  {
+    "tool_name": "Strike and Dip Calculator",
+    "industry": "Geology",
+    "one_line_pitch": "For field geologists and structural geology students: enter the coordinates and elevations of three points on a planar surface to instantly compute the strike, dip direction, and dip angle.",
+    "description": "A web tool that solves the classic three-point problem in structural geology. Inputs: three points, each with Easting (X, meters), Northing (Y, meters), and Elevation (Z, meters) as numeric fields (nine total). The user enters these via gr.Number components labeled 'Point A: X, Y, Z', etc. The core logic: 1. Compute vectors v1 = (x2-x1, y2-y1, z2-z1) and v2 = (x3-x1, y3-y1, z3-z1). 2. Compute the normal n = (a,b,c) = v1 × v2. If n is (0,0,0), show an error 'Points are collinear – cannot define a plane'. 3. Calculate dip angle = arctan(sqrt(a²+b²)/|c|) in degrees (0–90). 4. Calculate dip direction azimuth = atan2(b, a) * 180/π, normalized to 0–360; this is the downdip direction. 5. Compute strike = (dip_direction + 90) mod 360, then if strike ≥ 180, subtract 180 so it lies in [0,180). 6. Convert strike to a compass quadrant string (e.g., N45E, N45W, S45E, S45W) using conventional rules. Outputs: (a) text block showing strike azimuth, compass quadrant, dip direction azimuth and quadrant, and dip angle in degrees; (b) a Matplotlib 3D scatter plot of the three points with a fitted plane surface (wireframe), annotated with strike and dip symbols. The plot uses plt.subplot with projection='3d'. The UI layout is a single-column Gradio interface with three groups of three number inputs, a 'Calculate' button, and two output areas: a textbox and a plot.",
+    "image_prompt": "A geologist in the field using a compass and clipboard, with a rock outcrop in the background showing clear bedding planes, clean professional illustration style, wide banner composition.",
+    "slug": "strike-and-dip-calculator",
+    "module_name": "strike_and_dip_calculator",
+    "repo_url": "https://github.com/Nora-Research-Lab/strike-and-dip-calculator",
+    "shipped_at": "2026-09-22T14:14:13.970127Z"
   }
 ]
