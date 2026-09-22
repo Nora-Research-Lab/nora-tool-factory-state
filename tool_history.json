@@ -119,5 +119,16 @@
     "module_name": "fossil_body_mass_estimator",
     "repo_url": "https://github.com/Nora-Research-Lab/fossil-body-mass-estimator",
     "shipped_at": "2026-09-22T00:04:09.325417Z"
+  },
+  {
+    "tool_name": "SCS Runoff Depth Calculator",
+    "industry": "Hydrology",
+    "one_line_pitch": "For hydrologists and stormwater engineers: enter curve number, total rainfall, and antecedent moisture condition to instantly compute direct runoff depth using the SCS method.",
+    "description": "A simple, single-screen web tool that implements the SCS Curve Number (CN) runoff depth estimation method, widely used in hydrology and stormwater design.\n\nInputs:\n1. Curve Number (CN) – integer slider from 30 to 100 (step 1), representing the runoff potential of the land cover and soil group.\n2. Total Rainfall Depth (P) – float number input in inches (0 to 20, step 0.01).\n3. Antecedent Moisture Condition (AMC) – dropdown with three options: 'AMC II (Average)', 'AMC I (Dry)', 'AMC III (Wet)'.\n\nCore logic:\n- If AMC is not 'AMC II', adjust the entered CN using the standard SCS conversion:\n    - AMC I: CN_I = CN_II / (2.281 - 0.01281 × CN_II)\n    - AMC III: CN_III = CN_II / (0.427 + 0.00573 × CN_II)\n- Round adjusted CN to nearest integer.\n- Compute potential maximum retention S (inches): S = (1000 / adjusted_CN) - 10\n- Compute initial abstraction Ia = 0.2 × S\n- If P <= Ia, runoff Q = 0; otherwise Q = (P - Ia)² / (P + 0.8×S)\n- Convert Q from inches to mm (1 in = 25.4 mm).\n- Compute runoff ratio (Q/P) as a percentage.\n\nOutputs (displayed in text boxes):\n- Adjusted Curve Number (value used after AMC correction)\n- Potential maximum retention S (inches)\n- Initial abstraction Ia (inches)\n- Direct Runoff Q (inches and mm, formatted to 2 decimals)\n- Runoff ratio (%)\n\nUI layout (Gradio):\n- Title: 'SCS Curve Number Runoff Calculator'\n- Row 1: CN slider (left) and Rainfall number input (right)\n- Row 2: AMC dropdown (centered)\n- Row 3: 'Compute Runoff' button (center)\n- Row 4: Output text boxes in two columns: left (adjusted CN, S, Ia), right (Q in inches, Q in mm, runoff ratio)\n- All components use clear labels and units.\n\nNo AI/ML component; all logic is deterministic hydrologic calculation.",
+    "image_prompt": "A clean professional illustration of a small rural watershed receiving rainfall, with a simple runoff hydrograph chart in the foreground and a hand holding a CN table, wide banner composition, no text.",
+    "slug": "scs-runoff-depth-calculator",
+    "module_name": "scs_runoff_depth_calculator",
+    "repo_url": "https://github.com/Nora-Research-Lab/scs-runoff-depth-calculator",
+    "shipped_at": "2026-09-22T04:45:52.919325Z"
   }
 ]
