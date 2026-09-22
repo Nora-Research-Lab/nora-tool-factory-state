@@ -141,5 +141,16 @@
     "module_name": "strike_and_dip_calculator",
     "repo_url": "https://github.com/Nora-Research-Lab/strike-and-dip-calculator",
     "shipped_at": "2026-09-22T14:14:13.970127Z"
+  },
+  {
+    "tool_name": "Sound Speed in Seawater Calculator",
+    "industry": "Oceanography / Marine Geoscience",
+    "one_line_pitch": "For oceanographers and marine geoscientists: enter temperature, salinity, and depth to instantly compute the sound speed in seawater using the UNESCO equation.",
+    "description": "Inputs: (1) Temperature in degrees Celsius (0 to 40, step 0.1); (2) Salinity in practical salinity units (0 to 42, step 0.1); (3) Depth in meters (0 to 11000, step 1). The core calculation implements the UNESCO (Chen-Millero) equation for sound speed: c = 1449.2 + 4.6T − 0.055T^2 + 0.00029T^3 + (1.34 − 0.01T)(S − 35) + 0.016z, where T is temperature, S is salinity, z is depth. This formula is valid for the given ranges. The Gradio UI will have three number sliders with labels and units. A 'Calculate' button triggers the computation. Output: a single large number display showing sound speed in m/s with two decimal places. Additionally, a small bar chart is shown comparing the calculated speed to typical sound speeds in air (343 m/s) and fresh water (1480 m/s) for context. The interface is clean, with a blue marine-themed color scheme. No AI/ML component is used; the tool relies entirely on the standard empirical equation.",
+    "image_prompt": "A serene underwater scene with sunlight rays penetrating the deep blue ocean, a scientific instrument floating in the water column, and subtle sound wave rings emanating from a point, in a clean professional illustration style, wide banner composition.",
+    "slug": "sound-speed-in-seawater-calculator",
+    "module_name": "sound_speed_in_seawater_calculator",
+    "repo_url": "https://github.com/Nora-Research-Lab/sound-speed-in-seawater-calculator",
+    "shipped_at": "2026-09-22T23:44:45.225505Z"
   }
 ]
