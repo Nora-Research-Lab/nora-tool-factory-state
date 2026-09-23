@@ -152,5 +152,16 @@
     "module_name": "sound_speed_in_seawater_calculator",
     "repo_url": "https://github.com/Nora-Research-Lab/sound-speed-in-seawater-calculator",
     "shipped_at": "2026-09-22T23:44:45.225505Z"
+  },
+  {
+    "tool_name": "VEI Classifier",
+    "industry": "Volcanology",
+    "one_line_pitch": "For volcanologists and hazard analysts: enter eruption column height, tephra volume, and duration to instantly get the Volcanic Explosivity Index (VEI 0-8) and eruption type.",
+    "description": "The user provides three numeric inputs: (1) Eruption column height in km (float, range 0–50, default 5), (2) Volume of tephra ejected in km³ (float, range 0–1000, default 0.1), (3) Duration of explosive phase in hours (float, range 0–48, default 1). The core logic follows the Newhall & Self (1982) classification thresholds. Internally, volume in km³ is converted to m³ (×1e9). For each parameter, a VEI value is determined by threshold comparisons:\n- Column height (km): VEI 0 <0.1, VEI 1 0.1–1, VEI 2 1–5, VEI 3 3–15, VEI 4 10–25, VEI 5 ≥25; no further discrimination above 25 (use volume).\n- Volume (m³): VEI 0 <1e4, VEI 1 1e4–1e6, VEI 2 1e6–1e7, VEI 3 1e7–1e8, VEI 4 1e8–1e9, VEI 5 1e9–1e10, VEI 6 1e10–1e11, VEI 7 1e11–1e12, VEI 8 ≥1e12.\n- Duration (hours): VEI 0 <1, VEI 1 1–6, VEI 2 6–12, VEI 3 12–24, VEI 4 24–48, VEI 5 ≥48; duration is not used for VEI ≥6.\nThe final VEI is the maximum of the three parameter-specific VEIs. The output then maps VEI to eruption type: 0–1 Hawaiian/Strombolian, 2–3 Vulcanian, 4–5 Plinian, 6–7 Ultra-Plinian, 8 Supervolcanic. The Gradio UI has a title, three horizontal sliders with labels and default values, a 'Classify' button, and a results area showing VEI number and eruption type. Below the button, a static table displays the threshold criteria for reference. No AI/ML component; pure lookup and arithmetic.",
+    "image_prompt": "An artistic cross-section of a stratovolcano erupting, with labeled plume heights and a VEI scale on the side, in a clean infographic style, wide banner composition.",
+    "slug": "vei-classifier",
+    "module_name": "vei_classifier",
+    "repo_url": "https://github.com/Nora-Research-Lab/vei-classifier",
+    "shipped_at": "2026-09-23T06:54:29.050871Z"
   }
 ]
