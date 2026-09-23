@@ -163,5 +163,16 @@
     "module_name": "vei_classifier",
     "repo_url": "https://github.com/Nora-Research-Lab/vei-classifier",
     "shipped_at": "2026-09-23T06:54:29.050871Z"
+  },
+  {
+    "tool_name": "Ice Thickness from Surface Slope",
+    "industry": "Glaciology / Cryosphere",
+    "one_line_pitch": "For glaciologists and field researchers: enter surface slope and basal shear stress to instantly compute glacier ice thickness using the shallow-ice approximation.",
+    "description": "This tool computes the approximate thickness of a glacier or ice sheet using the shallow-ice approximation, which assumes that the driving stress is balanced by basal shear stress. The user provides four inputs: (1) surface slope in degrees (θ, range 0.1–30°), (2) basal shear stress in kilopascals (τ_b, range 20–200 kPa), (3) ice density in kg/m³ (ρ, default 917, adjustable ±10%), and (4) gravitational acceleration in m/s² (g, default 9.81, adjustable for planetary applications). The core calculation converts θ to radians, then uses H = τ_b / (ρ × g × sin(θ_rad)). All inputs are given via sliders (θ and τ_b) and numeric text boxes (ρ and g). The single numeric output is ice thickness H in meters, displayed with one decimal place. A small inset plot shows H as a function of slope for a fixed τ_b (using the user's current τ_b value) to visualise sensitivity. The UI layout: two sliders side by side at top (slope left, basal shear right), two numeric inputs below them, a large output number in the middle, and the sensitivity curve beneath. No AI/ML component is used; the tool relies on a standard glaciological formula.",
+    "image_prompt": "A clean professional illustration of a glacier cross-section on a mountain slope, with labels indicating surface slope angle (θ), ice thickness (H), and a downward arrow at the base labeled 'basal shear stress'. Flat vector style, wide banner composition, no text or logos.",
+    "slug": "ice-thickness-from-surface-slope",
+    "module_name": "ice_thickness_from_surface_slope",
+    "repo_url": "https://github.com/Nora-Research-Lab/ice-thickness-from-surface-slope",
+    "shipped_at": "2026-09-23T12:27:20.542291Z"
   }
 ]
