@@ -174,5 +174,16 @@
     "module_name": "ice_thickness_from_surface_slope",
     "repo_url": "https://github.com/Nora-Research-Lab/ice-thickness-from-surface-slope",
     "shipped_at": "2026-09-23T12:27:20.542291Z"
+  },
+  {
+    "tool_name": "Wind Power Density Calculator",
+    "industry": "Renewable Energy Site Assessment",
+    "one_line_pitch": "For renewable energy analysts and wind farm planners: enter average wind speed and Weibull shape factor to instantly compute wind power density and turbine class suitability.",
+    "description": "The tool computes wind power density (WPD) at hub height from user-supplied wind statistics. Inputs: (1) average wind speed (m/s, float 0-30, required), (2) Weibull shape parameter k (float 1.0-3.5, default 2.0), (3) air density ρ (kg/m³, float 0.8-1.5, default 1.225). Core logic: From average wind speed V_avg and shape k, estimate the Weibull scale parameter c = V_avg / Γ(1 + 1/k). Then mean of cubed wind speed E[v³] = c³ * Γ(1 + 3/k). WPD = 0.5 * ρ * E[v³], output in W/m². Classification uses standard NREL wind power class boundaries: Class 1 (<200), Class 2 (200-300), Class 3 (300-400), Class 4 (400-500), Class 5 (500-600), Class 6 (600-800), Class 7 (≥800). Additionally, if class ≥3, show 'Suitable for utility-scale turbines'; otherwise 'Marginal / small turbines only'. Gradio UI layout: three numeric input boxes in a row (wind speed, shape k, air density) with a 'Calculate' button. Outputs appear below: (a) large numeric readout of WPD with label 'Wind Power Density (W/m²)', (b) a plain-text classification line (e.g., 'Class 4: Good'), (c) a suitability statement, and (d) a horizontal bar chart (using matplotlib) showing the WPD value as a colored bar over the class thresholds, with dashed lines at each class boundary. No AI/ML component—pure deterministic calculation using the gamma function.",
+    "image_prompt": "A wide banner illustration showing a wind turbine silhouette on a green hill under a bright sky, with abstract swooping lines representing wind flow and a clean gauge icon on the side indicating power density levels, in a professional flat vector style.",
+    "slug": "wind-power-density-calculator",
+    "module_name": "wind_power_density_calculator",
+    "repo_url": "https://github.com/Nora-Research-Lab/wind-power-density-calculator",
+    "shipped_at": "2026-09-23T17:24:30.347632Z"
   }
 ]
