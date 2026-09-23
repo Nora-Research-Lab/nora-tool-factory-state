@@ -196,5 +196,16 @@
     "module_name": "rock_mass_rating_rmr_calculator",
     "repo_url": "https://github.com/Nora-Research-Lab/rock-mass-rating-rmr-calculator",
     "shipped_at": "2026-09-23T20:37:45.653189Z"
+  },
+  {
+    "tool_name": "Peak Ground Acceleration Estimator",
+    "industry": "Earthquake / Hazard Analysis",
+    "one_line_pitch": "For seismologists and earthquake engineers: enter earthquake magnitude, distance, and site soil class to instantly estimate peak ground acceleration (PGA) using a standard attenuation relationship.",
+    "description": "The tool provides a PGA estimate from a user-specified earthquake scenario using the Joyner & Boore (1981) attenuation relation with simplified site and faulting-style adjustments.\n\nInputs:\n- Magnitude (M, float, range 3.0–9.0, step 0.1): moment magnitude.\n- Distance (R, float, range 0.1–500 km, step 0.1): closest distance to fault rupture (km).\n- Site soil class (dropdown): 'Rock (Vs30 > 760 m/s)', 'Stiff soil (360–760 m/s)', 'Soft soil (<360 m/s)'. Corresponding site factors: 1.0, 1.2, 1.5.\n- Faulting style (dropdown): 'Strike-slip' (default), 'Reverse', 'Normal'. Style factors (applied to final PGA): strike-slip = 1.0, reverse = 1.1, normal = 0.9.\n\nCore calculation (step by step):\n1. Compute log10 PGA (cm/s²) using Joyner & Boore (1981):\n   log10(PGA_cm_s2) = 0.249 + 0.298 * (M - 6) - 0.00188 * R - 0.00046 * M * R\n2. PGA_cm_s2 = 10^(log10(PGA_cm_s2)).\n3. Apply site factor: PGA_cm_s2_site = PGA_cm_s2 * site_factor.\n4. Apply faulting style factor: PGA_cm_s2_final = PGA_cm_s2_site * fault_factor.\n5. Convert to g: PGA_g = PGA_cm_s2_final / 980.\n6. Classification thresholds (PGA_g): <0.1 → 'Weak'; 0.1–0.299 → 'Moderate'; 0.3–0.599 → 'Strong'; 0.6–0.999 → 'Very Strong'; ≥1.0 → 'Extreme'.\n\nGradio UI layout:\n- Left column: two number inputs (M, R) with sliders; two dropdowns (site class, faulting style); a 'Compute PGA' button.\n- Right column: output display with PGA in g (3 decimals) and in cm/s² (integer) in bold; classification text with color (green/amber/red); a matplotlib horizontal bar chart (width = PGA_g, with vertical dashed lines at 0.1, 0.3, 0.6, 1.0).\n\nNo AI/ML component; all logic is formula-based.",
+    "image_prompt": "A clean professional illustration of a seismogram with labeled amplitude and time axes, with a stylized cutaway of the Earth showing a fault rupture and epicenter. Wide banner composition, no text or logos.",
+    "slug": "peak-ground-acceleration-estimator",
+    "module_name": "peak_ground_acceleration_estimator",
+    "repo_url": "https://github.com/Nora-Research-Lab/peak-ground-acceleration-estimator",
+    "shipped_at": "2026-09-23T23:13:07.076179Z"
   }
 ]
