@@ -185,5 +185,16 @@
     "module_name": "wind_power_density_calculator",
     "repo_url": "https://github.com/Nora-Research-Lab/wind-power-density-calculator",
     "shipped_at": "2026-09-23T17:24:30.347632Z"
+  },
+  {
+    "tool_name": "Rock Mass Rating (RMR) Calculator",
+    "industry": "Engineering Geology",
+    "one_line_pitch": "For engineering geologists and geotechnical engineers: enter intact rock strength, RQD, joint spacing, joint condition, and groundwater conditions to instantly compute Bieniawski's RMR value and rock mass class.",
+    "description": "The tool implements Bieniawski's Rock Mass Rating (RMR) classification system. Inputs: (1) Intact rock strength (UCS) in MPa – numeric entry (0.1–400). The code converts the entered value to a rating using standard ranges: >250→15, 100–250→12, 50–100→7, 25–50→4, 5–25→2, 1–5→1, <1→0. (2) RQD (%) – slider 0–100, converted to rating: 90–100→20, 75–90→17, 50–75→13, 25–50→8, <25→3. (3) Joint spacing (m) – numeric entry (0.001–10), rating: >2→20, 0.6–2→15, 0.2–0.6→10, 0.06–0.2→8, <0.06→5. (4) Joint condition – dropdown: 'Very rough surfaces, no separation, hard joint wall'→30, 'Slightly rough surfaces, <1 mm separation, hard joint wall'→25, 'Smooth surfaces or 1–5 mm separation'→20, 'Slickensided or 5–10 mm separation, soft joint wall'→10, 'Soft gouge >10 mm separation'→0. (5) Groundwater conditions – dropdown: 'Completely dry'→15, 'Damp'→10, 'Wet'→7, 'Dripping'→4, 'Flowing'→0. The tool sums the five ratings to produce the total RMR (0–100) and assigns a class: 81–100→Class I (Very good), 61–80→Class II (Good), 41–60→Class III (Fair), 21–40→Class IV (Poor), 0–20→Class V (Very poor). The UI displays the total RMR as a large number, the class name with a color-coded badge (green to red), and a horizontal bar chart showing contributions from each parameter. All inputs are in a clean vertical layout. No AI component; pure deterministic classification.",
+    "image_prompt": "A clean professional illustration of a rock cut in an engineering geology field site, with a geologist holding a compass and clipboard, wide banner composition, bright natural lighting, photorealistic style.",
+    "slug": "rock-mass-rating-rmr-calculator",
+    "module_name": "rock_mass_rating_rmr_calculator",
+    "repo_url": "https://github.com/Nora-Research-Lab/rock-mass-rating-rmr-calculator",
+    "shipped_at": "2026-09-23T20:37:45.653189Z"
   }
 ]
