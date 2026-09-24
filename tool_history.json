@@ -218,5 +218,16 @@
     "module_name": "saline_aquifer_co2_storage_capacity_estimator",
     "repo_url": "https://github.com/Nora-Research-Lab/saline-aquifer-co2-storage-capacity-estimator",
     "shipped_at": "2026-09-24T01:27:45.243178Z"
+  },
+  {
+    "tool_name": "NDVI Calculator",
+    "industry": "Remote Sensing & Earth Observation",
+    "one_line_pitch": "For remote sensing analysts and ecologists: enter red and near-infrared reflectance values to instantly compute the Normalized Difference Vegetation Index (NDVI) and get a vegetation density classification.",
+    "description": "Inputs: (a) Red reflectance (unitless, 0.0–1.0) from a satellite or field sensor, entered via a number input or slider; (b) NIR reflectance (unitless, 0.0–1.0), same input type. Both require two decimal places. Calculation: NDVI = (NIR - Red) / (NIR + Red). If NIR + Red is 0, return NDVI = 0 (edge case). Output: (1) Numerical NDVI value displayed to three decimal places with a color-coded badge (red for negative, yellow for low, green for high). (2) A classification table mapped from the NDVI range: <0 → 'Water / Non-vegetated', 0–0.2 → 'Bare Soil / Sparse Vegetation', 0.2–0.4 → 'Moderate Vegetation', 0.4–0.6 → 'Dense Vegetation', >0.6 → 'Very Dense Vegetation'. (3) A horizontal color bar from red (NDVI=-1) through yellow/green to dark green (NDVI=+1) with a marker showing the computed value. UI: Gradio interface with two labeled input fields, a 'Calculate' button, and output area with the numeric value, classification text, and color bar (generated using matplotlib). No AI/ML component; pure mathematical calculation.",
+    "image_prompt": "A satellite image of a lush agricultural region with fields in varying shades of green and brown, overlaid with a translucent NDVI color ramp from red to dark green. Clean, professional scientific illustration style, wide banner composition.",
+    "slug": "ndvi-calculator",
+    "module_name": "ndvi_calculator",
+    "repo_url": "https://github.com/Nora-Research-Lab/ndvi-calculator",
+    "shipped_at": "2026-09-24T12:18:17.175707Z"
   }
 ]
