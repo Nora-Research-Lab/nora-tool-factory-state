@@ -207,5 +207,16 @@
     "module_name": "peak_ground_acceleration_estimator",
     "repo_url": "https://github.com/Nora-Research-Lab/peak-ground-acceleration-estimator",
     "shipped_at": "2026-09-23T23:13:07.076179Z"
+  },
+  {
+    "tool_name": "Saline Aquifer CO2 Storage Capacity Estimator",
+    "industry": "Carbon Capture & Storage (CCS)",
+    "one_line_pitch": "For CCS geoscientists and engineers: enter reservoir dimensions and properties to instantly estimate the theoretical CO2 storage capacity of a deep saline aquifer.",
+    "description": "**Inputs (5 fields):**  \n1. **Area (A)** – numeric input, km² (e.g., 100).  \n2. **Net Thickness (h)** – numeric input, meters (e.g., 50).  \n3. **Porosity (φ)** – slider or numeric input, fraction 0.0–0.5 (default 0.15).  \n4. **CO2 Density at reservoir conditions (ρ)** – numeric input, kg/m³ (typical range 600–900, default 700).  \n5. **Storage Efficiency Factor (E)** – slider or numeric input, dimensionless 0.01–0.10 (typical 0.02–0.04, default 0.04).  \n\n**Core calculation (step by step):**  \n1. Convert area from km² to m²: A_m² = A * 1e6.  \n2. Compute pore volume: V_pore = A_m² * h * φ (m³).  \n3. Compute mass of CO2 that can be stored: M = V_pore * ρ * E (kg).  \n4. Convert to million tonnes: M_Mt = M / 1e9.  \n5. Categorize storage potential:  \n   - < 10 Mt: 'Small'  \n   - 10–100 Mt: 'Medium'  \n   - > 100 Mt: 'Large'  \n\n**Gradio UI layout:**  \n- Title and brief instructions at top.  \n- Two columns: left column has all inputs (gr.Number for area, thickness, density; gr.Slider for porosity and efficiency).  \n- Right column shows a 'Calculate' button and output area: a large numeric display of estimated capacity in Mt, plus a text label with the capacity category (Small/Medium/Large) in a colored box.  \n- Below outputs, a short note explaining the input ranges and that this is a screening-level estimation.  \n\n**Output:**  \n- Numerical value: 'Estimated CO2 storage capacity: X.XX Mt'  \n- Classification: 'Storage potential: Large ( > 100 Mt )' with color coding (green for Large, yellow Medium, red Small).  \n- No charts – clean and focused.  \n\n**AI/ML component:** None. Pure deterministic calculation.",
+    "image_prompt": "A clean professional illustration of a deep saline aquifer cross-section with injection wells injecting CO2 into a porous sandstone layer capped by an impermeable shale, wide banner composition, cutaway view with labeled depth scale, modern infographic style in earth tones.",
+    "slug": "saline-aquifer-co2-storage-capacity-estimator",
+    "module_name": "saline_aquifer_co2_storage_capacity_estimator",
+    "repo_url": "https://github.com/Nora-Research-Lab/saline-aquifer-co2-storage-capacity-estimator",
+    "shipped_at": "2026-09-24T01:27:45.243178Z"
   }
 ]
