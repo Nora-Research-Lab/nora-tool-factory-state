@@ -229,5 +229,16 @@
     "module_name": "ndvi_calculator",
     "repo_url": "https://github.com/Nora-Research-Lab/ndvi-calculator",
     "shipped_at": "2026-09-24T12:18:17.175707Z"
+  },
+  {
+    "tool_name": "Drainage Density Calculator",
+    "industry": "Geomorphology",
+    "one_line_pitch": "For geomorphologists and hydrologists: enter watershed area and total stream length to instantly compute drainage density and classify the landscape as low, medium, or high drainage texture.",
+    "description": "Inputs: (1) Watershed area in square kilometers (km²) — numeric float input with a label 'Watershed Area (km²)'. (2) Total stream length in kilometers (km) — numeric float input with a label 'Total Stream Length (km)'. The core calculation: Drainage Density (Dd) = Total Stream Length / Watershed Area (km/km²). The tool then classifies Dd using standard geomorphic thresholds: Dd < 1.0 km/km² → 'Low drainage density (coarse texture)'; 1.0 ≤ Dd ≤ 3.0 km/km² → 'Medium drainage density (moderate texture)'; Dd > 3.0 km/km² → 'High drainage density (fine texture)'. The Gradio UI consists of: a row with two number inputs side by side, a 'Calculate Drainage Density' button beneath, and an output area showing the computed Dd value (with two decimal places) and the classification text. No chart or file output is needed; the result is displayed as a formatted number and color-coded classification (green for low, yellow for medium, red for high). There is no AI/ML component — it is a pure domain calculation. No data persists; the tool is stateless. Input validation: both values must be positive numbers; if zero or negative, show an error message. The UI is clean, with a header and brief instructions.",
+    "image_prompt": "A wide banner illustration of a branching blue stream network carved into a green and tan hillslope, viewed from above like a map, with a clean scientific infographic style. No text or logos.",
+    "slug": "drainage-density-calculator",
+    "module_name": "drainage_density_calculator",
+    "repo_url": "https://github.com/Nora-Research-Lab/drainage-density-calculator",
+    "shipped_at": "2026-09-24T17:25:30.765688Z"
   }
 ]
