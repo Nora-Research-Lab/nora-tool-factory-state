@@ -240,5 +240,16 @@
     "module_name": "drainage_density_calculator",
     "repo_url": "https://github.com/Nora-Research-Lab/drainage-density-calculator",
     "shipped_at": "2026-09-24T17:25:30.765688Z"
+  },
+  {
+    "tool_name": "Heating & Cooling Degree Day Calculator",
+    "industry": "Climate & Earth Systems",
+    "one_line_pitch": "For climate analysts and energy planners: enter daily high/low temperatures and a base temperature to instantly compute heating degree days (HDD) and cooling degree days (CDD) for a single day or a time series.",
+    "description": "The user provides (a) a comma-separated or line-separated list of daily minimum and maximum temperatures (°C), (b) a base temperature (°C, default 18.3°C for HDD, 18.3°C for CDD — but the user enters one base for both calculations or can choose separate bases), and (c) an optional toggle to use the Sinclair method (alternative averaging) instead of the standard method. The core logic: For each day, compute the average daily temperature = (Tmin + Tmax) / 2. For HDD: if average < base, HDD = base - average; else 0. For CDD: if average > base, CDD = average - base; else 0. Optionally, the user can choose a separate CDD base. The tool sums all daily values to give total HDD and CDD over the period. It also shows a simple bar chart of daily HDD and CDD values for visualization. The UI has: a large text area for input data (with example data pre-loaded), two number inputs for HDD base and CDD base, a checkbox for 'Use alternative averaging method (Sinclair method) — if checked, the average is computed as (Tmin + Tmax)/2 only if Tmax > base? Actually Sinclair method: HDD = (base - Tmax) if Tmax < base else 0; but often used for energy. Better to keep simple; allow user to choose 'Degree-day method' dropdown: Standard (average) or modified (Sinclair). Output: two numbers (total HDD, total CDD) plus a plot (bar chart using matplotlib) of daily contributions. Also a table of daily values can be displayed. No AI/ML component. The tool is purely arithmetic. A 'Download CSV' button exports the daily and total results.",
+    "image_prompt": "A wide banner showing a thermometer next to a calendar with a graph of temperature over time, in a clean flat illustration style with blue and orange colors representing heating and cooling degree days.",
+    "slug": "heating-cooling-degree-day-calculator",
+    "module_name": "heating_cooling_degree_day_calculator",
+    "repo_url": "https://github.com/Nora-Research-Lab/heating-cooling-degree-day-calculator",
+    "shipped_at": "2026-09-24T20:41:30.972689Z"
   }
 ]
