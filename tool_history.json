@@ -251,5 +251,16 @@
     "module_name": "heating_cooling_degree_day_calculator",
     "repo_url": "https://github.com/Nora-Research-Lab/heating-cooling-degree-day-calculator",
     "shipped_at": "2026-09-24T20:41:30.972689Z"
+  },
+  {
+    "tool_name": "UTM to Lat/Lon Converter",
+    "industry": "GIS & Spatial Analysis",
+    "one_line_pitch": "For GIS analysts and surveyors: instantly convert between UTM coordinates (easting, northing, zone, hemisphere) and decimal degrees (latitude, longitude) with optional DMS output.",
+    "description": "A single-screen Gradio tool for bi-directional coordinate conversion between UTM (Universal Transverse Mercator) and geographic coordinates (decimal degrees).\n\nInputs and UI layout:\n- A radio button group at the top labeled 'Conversion direction' with two options: 'UTM → Decimal Degrees' and 'Decimal Degrees → UTM'.\n- When 'UTM → Decimal Degrees' is selected, the input panel shows:\n  - Easting (float, meters)\n  - Northing (float, meters)\n  - Zone number (integer from 1 to 60)\n  - Hemisphere (dropdown: 'Northern' or 'Southern')\n- When 'Decimal Degrees → UTM' is selected, the input panel shows:\n  - Latitude (float, decimal degrees, range -90 to 90)\n  - Longitude (float, decimal degrees, range -180 to 180)\n- A 'Convert' button.\n- Output area: Displays the converted coordinates clearly. For UTM→DD: shows latitude and longitude in decimal degrees (to 6 decimal places) and also in DMS format (e.g., 45°30'15\"N, 73°34'12\"W). For DD→UTM: shows easting, northing (meters, 2 decimals), zone, and hemisphere. Also displays the UTM grid zone designation (e.g., 18N).\n\nCore calculation (can be implemented using the pyproj library with EPSG codes; fallback pure-Python math with standard transverse Mercator formulas also acceptable):\n- UTM→DD: Determine the central meridian for the zone (Zone→CM = (zone - 1)*6 - 180 + 3 for Northern; for Southern use same but adjust hemisphere). Use transverse Mercator inverse projection (iterative or using pyproj). Output lat/lon.\n- DD→UTM: Compute UTM zone from longitude (zone = floor((lon + 180)/6) + 1). Use transverse Mercator forward projection. For southern hemisphere, northing includes 10,000,000 m offset. Apply necessary constants like scale factor 0.9996.\n- The tool must validate inputs (e.g., latitude within -90 to 90, longitude within -180 to 180, UTM easting between approx 100,000 and 1,000,000 m, northing between 0 and 10,000,000 m) and display clear error messages.\n\nNo AI/ML component—pure geodetic calculation.",
+    "image_prompt": "A clean, professional illustration of a map grid with UTM zone lines and a red point marker labeled with coordinates, wide banner composition, scientific diagram style.",
+    "slug": "utm-to-lat-lon-converter",
+    "module_name": "utm_to_lat_lon_converter",
+    "repo_url": "https://github.com/Nora-Research-Lab/utm-to-lat-lon-converter",
+    "shipped_at": "2026-09-24T23:32:29.608361Z"
   }
 ]
