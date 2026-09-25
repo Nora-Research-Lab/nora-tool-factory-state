@@ -284,5 +284,16 @@
     "module_name": "rusle_soil_loss_estimator",
     "repo_url": "https://github.com/Nora-Research-Lab/rusle-soil-loss-estimator",
     "shipped_at": "2026-09-25T06:50:27.566541Z"
+  },
+  {
+    "tool_name": "Impact Crater Depth-Diameter Calculator",
+    "industry": "Planetary Geoscience",
+    "one_line_pitch": "For planetary geoscientists and crater analysts: enter crater diameter and type (simple/complex) to instantly compute expected depth and see the crater on a scaling diagram.",
+    "description": "The user provides (a) Crater Diameter in kilometers (float, 0.01–500 km), (b) Crater Type selected from a dropdown ('Simple' or 'Complex'), and (c) Target Body (optional, for reference labels: Moon, Mars, Earth). The core calculation uses classic power-law scaling relationships: for Simple craters, depth = 0.2 * diameter (linear); for Complex craters, depth = 0.1 * sqrt(diameter). These are standard empirical fits from Pike (1974) and Melosh (1989). The tool also computes a crude volume estimate using a paraboloid approximation: volume = (π/3) * (depth) * (diameter/2)^2, output in km³. The Gradio UI shows: a number input for diameter, dropdowns for crater type and target body, and a 'Calculate' button. The output displays: (1) Calculated Depth (km) with two decimal places, (2) Volume estimate (km³) in scientific notation, (3) A textual classification: 'Shallow' if depth < 0.8 * expected depth, 'Normal' if within ±20%, 'Deep' if > 1.2 * expected depth, based on comparison with the computed depth. (4) A static matplotlib plot showing a reference depth-diameter scaling curve (for both simple and complex regimes) with the input crater plotted as a red dot. The reference curves are generated from the same formulas over a range of diameters from 0.1 to 200 km. The plot has log-log axes, labeled axes (Depth (km) vs Diameter (km)), and a legend for transition. No AI/ML component is used.",
+    "image_prompt": "A clean professional illustration of a cross-section of a simple impact crater on a planetary surface, showing labeled dimensions of depth and diameter, rocky rim, layered subsurface, with a starry space background, wide banner composition.",
+    "slug": "impact-crater-depth-diameter-calculator",
+    "module_name": "impact_crater_depth_diameter_calculator",
+    "repo_url": "https://github.com/Nora-Research-Lab/impact-crater-depth-diameter-calculator",
+    "shipped_at": "2026-09-25T12:28:09.426824Z"
   }
 ]
