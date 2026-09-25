@@ -306,5 +306,16 @@
     "module_name": "shallow_foundation_bearing_capacity",
     "repo_url": "https://github.com/Nora-Research-Lab/shallow-foundation-bearing-capacity",
     "shipped_at": "2026-09-25T17:28:57.448425Z"
+  },
+  {
+    "tool_name": "Standing Timber Volume Calculator",
+    "industry": "Natural Resources & Land Management",
+    "one_line_pitch": "For foresters and land managers: enter tree DBH, height, and species to instantly compute individual tree volume and stand-level volume per hectare.",
+    "description": "This tool estimates the merchantable timber volume of a single tree or a uniform stand. It is designed for foresters, land managers, and natural resource professionals who need quick volume estimates for inventory or harvest planning.\n\nInputs:\n- Tree species (dropdown: Douglas-fir, Loblolly Pine, Sugar Maple, Red Oak, generic hardwood, generic softwood; each species has a default form factor stored internally)\n- Diameter at breast height (DBH) in centimeters (numeric slider or text input, range 5-200 cm)\n- Tree height in meters (numeric input, range 1-60 m)\n- Number of trees per hectare (stems/ha) – optional, default 1 for single tree calculation (numeric input, positive integer)\n- Form factor (optional manual override, 0.3-0.7, default is species-specific: Douglas-fir 0.45, Loblolly Pine 0.42, Sugar Maple 0.48, Red Oak 0.43, generic hardwood 0.47, generic softwood 0.44). The user can toggle between using the default or entering a custom form factor.\n\nCalculation logic:\n1. If user does not manually enter form factor, use the species default.\n2. Compute individual tree volume (m³) = (π/4) × (DBH/100)² × height × form_factor. (DBH converted to meters)\n3. Stand volume per hectare (m³/ha) = individual tree volume × number_of_trees_per_hectare.\n4. Also compute board foot equivalent: 1 m³ ≈ 424 board feet (Doyle or Scribner simplified; use a fixed conversion factor 424). Output board feet per tree and per hectare.\n5. Classify the volume: < 0.1 m³ = 'sapling', 0.1-0.5 m³ = 'small', 0.5-1.0 m³ = 'medium', >1.0 m³ = 'large'. Display classification.\n\nGradio UI components:\n- Dropdown for species\n- Number inputs for DBH, height, trees/ha\n- Checkbox: 'Use custom form factor' – if checked, a number input for form factor appears\n- Button: 'Calculate Volume'\n- Output area showing: individual tree volume (m³ and board feet), stand volume per hectare (m³/ha and board feet/acre optionally), size classification, and a simple horizontal bar chart comparing the tree volume to the typical range for the selected species (using stored average volumes for that species).\n- Optional export button to download results as CSV.\n\nNo AI/ML component; all logic is deterministic forestry formulas.",
+    "image_prompt": "A clean professional illustration of a forester in a forest measuring a tree's diameter at breast height with a diameter tape, with a clipboard and surrounding pines, in a wide banner composition.",
+    "slug": "standing-timber-volume-calculator",
+    "module_name": "standing_timber_volume_calculator",
+    "repo_url": "https://github.com/Nora-Research-Lab/standing-timber-volume-calculator",
+    "shipped_at": "2026-09-25T23:42:03.186736Z"
   }
 ]
