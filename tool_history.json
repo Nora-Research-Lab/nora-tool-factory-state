@@ -273,5 +273,16 @@
     "module_name": "circular_curve_layout_calculator",
     "repo_url": "https://github.com/Nora-Research-Lab/circular-curve-layout-calculator",
     "shipped_at": "2026-09-25T01:52:20.143178Z"
+  },
+  {
+    "tool_name": "RUSLE Soil Loss Estimator",
+    "industry": "Environmental Geoscience",
+    "one_line_pitch": "For environmental geoscientists and land managers: enter rainfall erosivity, soil erodibility, slope, cover, and support practice factors to compute annual soil loss and erosion risk classification using the Revised Universal Soil Loss Equation.",
+    "description": "The tool computes annual soil loss using RUSLE: A = R × K × LS × C × P, where A is annual soil loss (t ha⁻¹ yr⁻¹). Inputs: (1) R factor (MJ mm ha⁻¹ h⁻¹ yr⁻¹) numeric input with range 0–1000; (2) K factor (t ha h ha⁻¹ MJ⁻¹ mm⁻¹) numeric input with range 0–1; (3) LS factor (dimensionless) numeric input, with an optional sub-section where user can compute LS by entering slope length (m) and slope steepness (%) using the formula LS = (λ/22.13)^m * (65.41 sin²θ + 4.56 sinθ + 0.065) where m = 0.5 for slopes ≥5%, 0.4 for 3–5%, 0.3 for 1–3%, else 0.2; (4) C factor: dropdown with typical values (Bare soil 1.0, Row crops 0.5, Cereal crops 0.2, Pasture 0.02, Forest 0.01, Custom) plus a numeric input if Custom selected; (5) P factor: dropdown (Straight row 1.0, Contour tillage 0.5, Strip cropping 0.3, Terracing 0.2, Custom) plus numeric input if Custom. UI: Title at top. Two-column layout: left column for R, K, LS inputs (with a small 'Compute LS from slope' expandable section); right column for C and P dropdowns with custom numeric fields, and a 'Calculate' button. Output: numeric A value prominently displayed with unit, color-coded erosion risk bar (green <5 low, yellow 5–10 moderate, orange 10–20 high, red >20 severe), and a text summary showing the RUSLE equation with substituted values. Optionally, a simple horizontal bar chart comparing the five factor contributions. No AI component. All calculations are deterministic.",
+    "image_prompt": "A wide banner illustration showing a hillside landscape with visible soil erosion, including rills and gullies, with a farmer or environmental scientist in the foreground using a tablet. Clean, professional illustration style with earth tones.",
+    "slug": "rusle-soil-loss-estimator",
+    "module_name": "rusle_soil_loss_estimator",
+    "repo_url": "https://github.com/Nora-Research-Lab/rusle-soil-loss-estimator",
+    "shipped_at": "2026-09-25T06:50:27.566541Z"
   }
 ]
