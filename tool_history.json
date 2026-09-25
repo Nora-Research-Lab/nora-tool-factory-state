@@ -262,5 +262,16 @@
     "module_name": "utm_to_lat_lon_converter",
     "repo_url": "https://github.com/Nora-Research-Lab/utm-to-lat-lon-converter",
     "shipped_at": "2026-09-24T23:32:29.608361Z"
+  },
+  {
+    "tool_name": "Circular Curve Layout Calculator",
+    "industry": "Surveying & Mapping",
+    "one_line_pitch": "For surveyors and civil engineers: enter intersection angle, radius, and PI station to instantly compute all horizontal circular curve elements and get a printable layout table.",
+    "description": "This tool computes the full geometric layout of a horizontal circular curve, a standard task in route surveying. \n\nInputs (user provides):\n- Intersection angle (Δ) in decimal degrees (0 < Δ < 180)\n- Radius (R) in meters or feet (user chooses unit via a dropdown)\n- Station of the Point of Intersection (PI) in the format 'XX+YY.ZZ' (e.g., '12+45.67' meaning 1245.67 units from datum)\n- (Optional) Station interval for layout points (default 10 m or 25 ft based on unit choice)\n\nCore calculation logic (step by step):\n1. Convert Δ to radians: Δ_rad = Δ × π/180.\n2. Tangent length T = R × tan(Δ_rad/2).\n3. Curve length L = R × Δ_rad (in same units as R).\n4. Chord length C = 2 × R × sin(Δ_rad/2).\n5. External distance E = R × (1/cos(Δ_rad/2) - 1).\n6. Mid-ordinate M = R × (1 - cos(Δ_rad/2)).\n7. Station of Point of Curvature (PC) = PI station - T.\n8. Station of Point of Tangency (PT) = PC station + L.\n9. For layout at user-chosen interval (s), generate station values from PC to PT at steps of s. For each intermediate station i, compute: deflection angle from PC = (station i - PC) * (Δ_rad / L) * (180/π) / 2, and chord distance from PC = 2 × R × sin( (station i - PC) * (Δ_rad / L) / 2 ).\n\nUI layout:\n- Top section: a centered title, one-line pitch, and an image banner (placeholder).\n- Left column: input fields. For Δ: number input (0-180). For R: number input (positive). Unit dropdown: [meters, feet]. For PI station: text input with placeholder 'XX+YY.ZZ'. For interval: number input with default based on unit.\n- Right column: output elements — a text summary showing T, L, C, E, M, PC station, PT station (with units), then a scrollable HTML table showing the layout stations with their deflection angle (in degrees) and chord distance. Additionally, a 'Download as CSV' button for the layout table.\n- No AI/ML component; purely geometric formulas and a simple unit conversion.\n\nAll outputs display with 2 decimal places, and stations are formatted as 'XX+YY.ZZ'.",
+    "image_prompt": "An illustration showing a surveyor using a total station at a curve stakeout point on a road alignment, with labeled curve elements (PC, PT, PI, radius) drawn as overlays. Clean flat vector style, wide banner composition.",
+    "slug": "circular-curve-layout-calculator",
+    "module_name": "circular_curve_layout_calculator",
+    "repo_url": "https://github.com/Nora-Research-Lab/circular-curve-layout-calculator",
+    "shipped_at": "2026-09-25T01:52:20.143178Z"
   }
 ]
