@@ -295,5 +295,16 @@
     "module_name": "impact_crater_depth_diameter_calculator",
     "repo_url": "https://github.com/Nora-Research-Lab/impact-crater-depth-diameter-calculator",
     "shipped_at": "2026-09-25T12:28:09.426824Z"
+  },
+  {
+    "tool_name": "Shallow Foundation Bearing Capacity",
+    "industry": "Construction / Infrastructure Geology",
+    "one_line_pitch": "For construction geologists and geotechnical engineers: enter soil strength and foundation parameters to instantly compute ultimate and allowable bearing capacity using Terzaghi's method.",
+    "description": "A single-screen Gradio app that computes the ultimate and allowable bearing capacity of a continuous (strip) shallow foundation using Terzaghi's bearing capacity equation. Inputs: cohesion (c, kPa), internal friction angle (φ, degrees), unit weight of soil (γ, kN/m³), foundation width (B, m), foundation depth (Df, m), depth to water table below ground surface (Dw, m, optional, default 0 to indicate no water table effect), and factor of safety (FS, default 3). The core calculation: first, compute the bearing capacity factors using Terzaghi's formulas — Nq = exp(π tan φ) × tan²(45° + φ/2); Nc = (Nq - 1) / tan φ (if φ > 0, else 5.14 for φ=0); Nγ = 2 (Nq + 1) tan φ. If a water table is present and Dw < B + Df, adjust the unit weight to an effective value using a weighted average: γ_eff = γ × (Dw / (B + Df)) + (γ - γ_water) × (1 - Dw/(B + Df)), where γ_water = 9.81 kN/m³; otherwise γ_eff = γ. Then compute ultimate bearing capacity q_u = c Nc + γ_eff Df Nq + 0.5 γ_eff B Nγ. Allowable bearing capacity q_a = q_u / FS. The UI displays the intermediate N-factors in a small table, along with q_u and q_a values (rounded to 1 decimal). Additionally, the tool classifies the soil type based on φ: <5° → very soft clay; 5–10° → soft clay; 10–20° → stiff clay; 20–30° → dense sand; 30–40° → very dense sand; >40° → gravel/sand. All outputs update instantly on any input change. No AI/ML component is used.",
+    "image_prompt": "A clean professional illustration of a shallow strip foundation on a soil profile with annotated layers (cohesion, friction angle, unit weight) and a small table of bearing capacity factors; wide banner composition, no text.",
+    "slug": "shallow-foundation-bearing-capacity",
+    "module_name": "shallow_foundation_bearing_capacity",
+    "repo_url": "https://github.com/Nora-Research-Lab/shallow-foundation-bearing-capacity",
+    "shipped_at": "2026-09-25T17:28:57.448425Z"
   }
 ]
