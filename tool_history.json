@@ -339,5 +339,16 @@
     "module_name": "q_rock_mass_quality_index",
     "repo_url": "https://github.com/Nora-Research-Lab/q-rock-mass-quality-index",
     "shipped_at": "2026-09-26T07:32:16.265742Z"
+  },
+  {
+    "tool_name": "Point Load to UCS Converter",
+    "industry": "Geotechnical Engineering",
+    "one_line_pitch": "For geotechnical engineers and engineering geologists: enter the point load strength index (Is50) and select rock type to instantly compute unconfined compressive strength (UCS) with ISRM classification.",
+    "description": "Inputs: (1) Point load strength index Is50 [MPa] – a float, typically 0.1 to 10 MPa. (2) Rock type – a dropdown with options: 'General (k=24)', 'Low-porosity sandstone (k=20)', 'Limestone/dolomite (k=20)', 'Granite/gneiss (k=25)', 'Basalt/diabase (k=22)', or a 'Custom k factor' option that reveals an additional numeric input for k between 15 and 30. The default is 'General (k=24)'. If custom is selected, a number input for k appears. Logic: UCS = k × Is50. The result is displayed in MPa with two decimal places. Additionally, the tool classifies the UCS according to the ISRM (1981) scale: <1 MPa = 'Extremely weak', 1-5 MPa = 'Very weak', 5-25 MPa = 'Weak', 25-50 MPa = 'Medium strong', 50-100 MPa = 'Strong', 100-250 MPa = 'Very strong', >250 MPa = 'Extremely strong'. The classification is shown as text next to the UCS value. Gradio UI: A title 'Point Load to UCS Converter', then a row with the Is50 number input (label 'Point Load Index Is50 (MPa)') and the rock type dropdown. Below, a 'Compute UCS' button. Below that, an output textbox showing 'UCS = X.XX MPa – Classification: Y'. Optionally, a small info icon next to the classification that shows the ISRM table on hover or click. No chart. No AI/ML component, purely arithmetic and look-up.",
+    "image_prompt": "A clean technical illustration of a point load test on a rock core sample in a field or lab setting, with a dial showing force, and a split screen showing a UCS classification chart. Professional blue and gray tones, wide banner composition.",
+    "slug": "point-load-to-ucs-converter",
+    "module_name": "point_load_to_ucs_converter",
+    "repo_url": "https://github.com/Nora-Research-Lab/point-load-to-ucs-converter",
+    "shipped_at": "2026-09-26T12:27:35.605730Z"
   }
 ]
