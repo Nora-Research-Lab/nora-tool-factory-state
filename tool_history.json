@@ -350,5 +350,16 @@
     "module_name": "point_load_to_ucs_converter",
     "repo_url": "https://github.com/Nora-Research-Lab/point-load-to-ucs-converter",
     "shipped_at": "2026-09-26T12:27:35.605730Z"
+  },
+  {
+    "tool_name": "Liquefaction Potential Index Calculator",
+    "industry": "Earthquake / Hazard Analysis",
+    "one_line_pitch": "For earthquake hazard analysts and geotechnical engineers: enter SPT blow counts, fines content, and ground motion parameters to instantly compute the factor of safety against liquefaction and the Liquefaction Potential Index (LPI) with a severity classification.",
+    "description": "This tool implements the simplified liquefaction evaluation procedure (Seed & Idriss 1971, updated Idriss & Boulanger 2008). The user provides the following inputs: (1) SPT blow count N (uncorrected, blows/ft or blows/30cm), (2) depth of the soil layer (m), (3) fines content FC (%), (4) total unit weight of soil (kN/m³), (5) depth to groundwater table (m), (6) earthquake moment magnitude Mw, (7) peak ground acceleration at surface amax (g). The tool computes: total vertical stress σv, effective vertical stress σv', stress reduction coefficient rd using the depth-dependent formula (rd = exp(α(z) + β(z) * Mw) with α and β given by Liao & Whitman), cyclic stress ratio CSR = 0.65 * (amax/g) * (σv/σv') * rd. Corrected blow count N1,60 is calculated using energy and overburden correction factors (CN = (Pa/σv')^0.5, capped at 1.7). A fines content adjustment adds ΔN1,60 = exp(1.63 + 9.7/FC - 0.01*(FC)^2) for FC<35% so that clean-sand equivalent N1,60cs = N1,60 + ΔN1,60. Cyclic resistance ratio CRR is computed from N1,60cs using Idriss & Boulanger's equation: CRR = exp((N1,60cs/14.1) + (N1,60cs/126)^2 - (N1,60cs/23.6)^3 + (N1,60cs/25.4)^4 - 2.8). Factor of safety FS = CRR/CSR. If FS ≤ 1, layer is liquefiable. LPI is then computed as the depth-weighted integral of (1-FS) for liquefiable layers over the top 20 m, with weighting function w(z)=10-0.5z (z in m). The output displays: FS for the layer, LPI value, and a severity classification: LPI=0 (none), 0<LPI≤5 (low), 5<LPI≤15 (moderate), 15<LPI≤85 (high), LPI>85 (very high). The Gradio UI uses number inputs with sliders (or numerical entry) for each parameter, a 'Calculate' button, and output components: a text box showing FS and LPI, and a color-coded severity indicator (e.g., an HTML/CSS block). No AI/ML component is used; all calculations are deterministic engineering equations.",
+    "image_prompt": "A wide banner illustration showing a cross-section of soil layers with a water table, an earthquake shaking arrow, and a color-coded liquefaction hazard map overlay, in a clean professional infographic style.",
+    "slug": "liquefaction-potential-index-calculator",
+    "module_name": "liquefaction_potential_index_calculator",
+    "repo_url": "https://github.com/Nora-Research-Lab/liquefaction-potential-index-calculator",
+    "shipped_at": "2026-09-26T19:31:35.356617Z"
   }
 ]
