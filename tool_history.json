@@ -328,5 +328,16 @@
     "module_name": "apparent_dip_to_true_dip_converter",
     "repo_url": "https://github.com/Nora-Research-Lab/apparent-dip-to-true-dip-converter",
     "shipped_at": "2026-09-26T02:05:03.235847Z"
+  },
+  {
+    "tool_name": "Q-Rock Mass Quality Index",
+    "industry": "Geological Engineering",
+    "one_line_pitch": "For geological engineers and tunnel designers: enter six rock mass parameters (RQD, joint set number, joint roughness, joint alteration, water conditions, and stress reduction) to instantly compute Barton's Q-value and get rock mass class with support recommendations.",
+    "description": "This tool implements the Q-system (Barton et al., 1974) for rock mass classification in tunneling and excavation engineering.\n\nInputs (all numerical, with dropdowns for categorical choices where applicable):\n- RQD (Rock Quality Designation, %): numeric slider 0–100.\n- Jn (Joint Set Number): dropdown with values 0.5 (massive), 1 (one set), 2 (two sets), 3 (three sets), 4 (four or more), 5 (crushed rock).\n- Jr (Joint Roughness Number): dropdown with values 4 (discontinuous joints), 3 (rough/irregular), 2.5 (smooth undulating), 2 (filled/healed), 1.5 (rough planar), 1 (smooth planar), 0.5 (slickensided).\n- Ja (Joint Alteration Number): dropdown with values 0.75 (tightly healed, hard), 1 (unweathered, surface staining only), 2 (slightly altered), 4 (moderately altered), 6 (highly altered), 8 (soft clay coatings), 10 (swelling clay).\n- Jw (Joint Water Reduction Factor): dropdown with values 1 (dry), 0.66 (damp), 0.5 (wet), 0.33 (water inflow), 0.2 (high inflow).\n- SRF (Stress Reduction Factor): dropdown with values 0.5 (low stress near surface), 1 (medium stress), 2 (high stress), 4 (very high stress), 8 (extremely high stress).\n\nCalculation:\nQ = (RQD / Jn) * (Jr / Ja) * (Jw / SRF)\n\nClassification table (Barton):\n- 0.001–0.01: Exceptionally poor\n- 0.01–0.1: Extremely poor\n- 0.1–1: Very poor\n- 1–4: Poor\n- 4–10: Fair\n- 10–40: Good\n- 40–100: Very good\n- 100–1000: Extremely good\n- >1000: Exceptionally good\n\nOutput:\n- Numeric Q-value displayed prominently.\n- Rock mass class (text).\n- A simple horizontal color bar showing the Q range with a marker at the computed value.\n- In a separate section, a support recommendation table (simplified from Barton): for the given Q and tunnel span (user provides tunnel span in meters as a numeric input), recommend support type: None / Spot bolting / Systematic bolting / Shotcrete and bolting / Steel sets and shotcrete. Recommendation logic based on common Q-support correlation lookup (e.g., for Q<0.01 and small span: steel sets; for Q>100: none).\n\nUI layout: top section with input sliders/dropdowns; a 'Calculate' button; then outputs: Q-value, class, color bar, support recommendation.\n\nNo AI component; pure deterministic calculation and lookup.",
+    "image_prompt": "A cross-section of a rock tunnel with visible joint sets and bolted support, depicted as a clean technical illustration with a Q-value scale overlay, professional engineering style, wide banner composition.",
+    "slug": "q-rock-mass-quality-index",
+    "module_name": "q_rock_mass_quality_index",
+    "repo_url": "https://github.com/Nora-Research-Lab/q-rock-mass-quality-index",
+    "shipped_at": "2026-09-26T07:32:16.265742Z"
   }
 ]
