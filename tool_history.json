@@ -383,5 +383,16 @@
     "module_name": "time_of_concentration_calculator",
     "repo_url": "https://github.com/Nora-Research-Lab/time-of-concentration-calculator",
     "shipped_at": "2026-09-27T05:50:16.470977Z"
+  },
+  {
+    "tool_name": "Slug Test Analysis Tool",
+    "industry": "Hydrogeology / Groundwater",
+    "one_line_pitch": "For hydrogeologists and groundwater engineers: enter water-level displacement and time-recovery measurements to instantly compute hydraulic conductivity using the Hvorslev and Bouwer-Rice methods.",
+    "description": "**Inputs:** (1) Well radius (r) in meters (or centimeters, with unit selector). (2) Screen length (L) in meters. (3) Initial displacement (H0) in meters. (4) A data table or CSV upload with two columns: time (seconds) and head ratio H(t)/H0 (dimensionless, value between 0 and 1). The user may paste or upload. \n\n**Core logic:** \n- Hvorslev method: Convert head ratios to natural logarithm ln(H(t)/H0). Perform linear regression of ln(H/H0) vs. time. The slope gives -1/T0, where T0 is the basic time lag. Then hydraulic conductivity K = (r^2 * ln(L/r)) / (2 * L * T0). \n- Bouwer-Rice method (for partially penetrating wells): Use the same T0 from regression. Effective radius Re is computed empirically as function of r, L, and aquifer thickness (user may provide aquifer thickness or assume large). Then K = (r^2 * ln(Re/r)) / (2 * L * T0). \n- Both methods return K in m/s. \n\n**UI layout:** \n- Top: title, brief instructions. \n- Left panel: input fields for r, L, H0, aquifer thickness (optional), and a data input area (text area for paste or file upload widget). \n- Right panel: output display showing K_Hvorslev (m/s), K_BouwerRice (m/s), and a matplotlib plot of ln(H/H0) vs. time with the regression line overlaid. Below the plot, a classification table mapping K range to material type (gravel, sand, silt, clay). \n- A 'Calculate' button triggers the computation. \n- Option to download a summary report as a text file. \n\n**AI/ML component:** None. Pure domain calculations.",
+    "image_prompt": "A clean professional illustration of a monitoring well during a slug test, with a pressure transducer cable and a data logger, set in a field hydrogeology scene, wide banner composition.",
+    "slug": "slug-test-analysis-tool",
+    "module_name": "slug_test_analysis_tool",
+    "repo_url": "https://github.com/Nora-Research-Lab/slug-test-analysis-tool",
+    "shipped_at": "2026-09-27T10:57:33.389000Z"
   }
 ]
