@@ -361,5 +361,16 @@
     "module_name": "liquefaction_potential_index_calculator",
     "repo_url": "https://github.com/Nora-Research-Lab/liquefaction-potential-index-calculator",
     "shipped_at": "2026-09-26T19:31:35.356617Z"
+  },
+  {
+    "tool_name": "Magma Viscosity Calculator",
+    "industry": "Volcanology",
+    "one_line_pitch": "For volcanologists and petrologists: select magma composition and enter temperature to instantly estimate melt viscosity using the Vogel-Fulcher-Tammann (VFT) model, with optional water content correction.",
+    "description": "The user provides three inputs: (1) Magma composition — a dropdown with options 'Basalt', 'Andesite', 'Dacite', 'Rhyolite'; (2) Temperature in °C (range 700–1400°C, step 1°C); (3) Water content in wt% (0–8, step 0.1), default 0. The core logic uses the VFT equation: log10(η) = A + B/(T - C), where viscosity η is in Pa·s and T is in °C. For each magma type the coefficients are (dry): Basalt (A=-3.0, B=2000, C=300), Andesite (A=-2.5, B=4000, C=200), Dacite (A=-2.0, B=6000, C=150), Rhyolite (A=-1.5, B=8000, C=100). These are representative values from published silicate melt viscosity models. Water content correction is applied: subtract (0.4 × H2O_wt%) from the dry log10(η) (linear approximation). The UI shows: a GrNumber input for temperature, a GrDropdown for composition, a GrNumber for water content, and a 'Calculate' button. Outputs: (a) Numerical display of log10(η) and η in Pa·s; (b) A GrPlot line chart of log10(η) vs. temperature for a range of ±50°C around the user input, with fixed composition and water content; (c) A text classification based on log10(η): <2 = 'Very fluid', 2–4 = 'Fluid', 4–6 = 'Viscous', 6–8 = 'Very viscous', >8 = 'Extremely viscous'. No AI/ML component — all calculation is deterministic using the VFT equation and empirical coefficients.",
+    "image_prompt": "A wide banner illustration of a glowing red lava flow descending from an erupting volcano at dusk, with molten rock textures and steam rising, in a clean scientific diagram style with subtle grid lines in the background.",
+    "slug": "magma-viscosity-calculator",
+    "module_name": "magma_viscosity_calculator",
+    "repo_url": "https://github.com/Nora-Research-Lab/magma-viscosity-calculator",
+    "shipped_at": "2026-09-27T00:39:56.816455Z"
   }
 ]
