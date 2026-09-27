@@ -394,5 +394,16 @@
     "module_name": "slug_test_analysis_tool",
     "repo_url": "https://github.com/Nora-Research-Lab/slug-test-analysis-tool",
     "shipped_at": "2026-09-27T10:57:33.389000Z"
+  },
+  {
+    "tool_name": "Active & Passive Earth Pressure Calculator",
+    "industry": "Construction / Infrastructure Geology",
+    "one_line_pitch": "For construction geologists and geotechnical engineers: enter soil strength, wall geometry, and surcharge to instantly compute Rankine active and passive earth pressures with a pressure diagram.",
+    "description": "A single-screen Gradio app that computes active and passive earth pressures on a vertical retaining wall using Rankine theory for a sloping backfill.\n\nInputs (all numerical):\n- Effective cohesion c' (kPa, range 0–100)\n- Effective friction angle φ' (degrees, range 0–45)\n- Unit weight γ (kN/m³, range 14–22)\n- Wall height H (m, range 1–20)\n- Ground slope angle β (degrees, range 0–45, default 0)\n- Surcharge q (kPa, range 0–50, default 0)\n\nCore logic:\n1. Validate that β ≤ φ', otherwise display an error that backfill slope exceeds friction angle.\n2. Compute active earth pressure coefficient Ka and passive coefficient Kp using Rankine formulas:\n   Ka = cosβ * (cosβ - √(cos²β - cos²φ')) / (cosβ + √(cos²β - cos²φ'))\n   Kp = cosβ * (cosβ + √(cos²β - cos²φ')) / (cosβ - √(cos²β - cos²φ'))\n3. Compute total active thrust Pa = 0.5 * γ * H² * Ka + q * H * Ka (kN/m)\n4. Compute total passive thrust Pp = 0.5 * γ * H² * Kp + q * H * Kp (kN/m)\n5. Both thrusts act at H/3 from the base.\n\nGradio UI layout:\n- Left column: six number inputs (sliders with text box) labeled with units.\n- Right column: a 'Calculate' button.\n- Below: four read-only text outputs for Ka, Kp, Pa, Pp (accurate to 2 decimals).\n- A matplotlib figure showing a schematic wall profile with triangular pressure distribution on active (left) and passive (right) sides, with arrows indicating thrust magnitude and point of application; load values annotated.\n\nNo AI component – purely deterministic geotechnical calculation.",
+    "image_prompt": "A clean technical illustration showing a retaining wall with triangular pressure diagrams on the active and passive sides, arrows indicating thrust, and soil layers. Professional engineering style, wide banner composition.",
+    "slug": "active-passive-earth-pressure-calculator",
+    "module_name": "active_passive_earth_pressure_calculator",
+    "repo_url": "https://github.com/Nora-Research-Lab/active-passive-earth-pressure-calculator",
+    "shipped_at": "2026-09-27T15:32:07.697315Z"
   }
 ]
