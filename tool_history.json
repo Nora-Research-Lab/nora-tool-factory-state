@@ -431,5 +431,16 @@
     "module_name": "tilted_solar_irradiance_calculator",
     "repo_url": "https://github.com/Nora-Research-Lab/tilted-solar-irradiance-calculator",
     "shipped_at": "2026-09-28T06:31:07.422169Z"
+  },
+  {
+    "tool_name": "A/CNK A/NK Peraluminous Classifier",
+    "industry": "Geochemistry",
+    "one_line_pitch": "For igneous petrologists and geochemists: enter weight percent of Al₂O₃, CaO, Na₂O, and K₂O to instantly compute A/CNK and A/NK indices and classify the melt as peraluminous, metaluminous, or peralkaline.",
+    "description": "Inputs: four numeric fields for weight percent of Al₂O₃ (default 15.0), CaO (default 10.0), Na₂O (default 3.0), and K₂O (default 2.0). The tool converts wt% to molar quantities using molecular weights (Al₂O₃=101.96, CaO=56.08, Na₂O=61.98, K₂O=94.20). Then it computes A/CNK = moles Al₂O₃ / (moles CaO + moles Na₂O + moles K₂O) and A/NK = moles Al₂O₃ / (moles Na₂O + moles K₂O). Classification rules: if A/CNK > 1.1 → strongly peraluminous; if 1.0 < A/CNK ≤ 1.1 → weakly peraluminous; if A/CNK < 1.0 and A/NK > 1.0 → metaluminous; if A/NK < 1.0 → peralkaline. Outputs: (1) numeric display of A/CNK rounded to 2 decimals, (2) numeric display of A/NK rounded to 2 decimals, (3) text label with classification, (4) a matplotlib scatter plot (400×400 px) showing the input point on an A/CNK vs A/NK diagram with shaded fields for peraluminous, metaluminous, and peralkaline regions (based on typical boundaries: vertical line at A/CNK=1.0, horizontal line at A/NK=1.0). Axes are labeled and limits set to 0-2 for A/CNK and 0-2 for A/NK. UI layout: four input sliders/numbers in a row, a 'Calculate' button, then outputs arranged in two columns: left column with numeric readouts and text classification, right column with the plot. No AI/ML component; pure geochemical classification using standard petrology equations.",
+    "image_prompt": "A clean professional illustration of a geologist's hand holding a split rock core showing pinkish granite texture, with a laptop screen inset displaying a simple scatter plot with labeled A/CNK and A/NK axes and shaded classification fields, white background, wide banner composition.",
+    "slug": "a-cnk-a-nk-peraluminous-classifier",
+    "module_name": "a_cnk_a_nk_peraluminous_classifier",
+    "repo_url": "https://github.com/Nora-Research-Lab/a-cnk-a-nk-peraluminous-classifier",
+    "shipped_at": "2026-09-28T14:28:25.543247Z"
   }
 ]
