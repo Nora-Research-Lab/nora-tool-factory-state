@@ -442,5 +442,16 @@
     "module_name": "a_cnk_a_nk_peraluminous_classifier",
     "repo_url": "https://github.com/Nora-Research-Lab/a-cnk-a-nk-peraluminous-classifier",
     "shipped_at": "2026-09-28T14:28:25.543247Z"
+  },
+  {
+    "tool_name": "Seismic Refraction Two-Layer Calculator",
+    "industry": "Geophysics",
+    "one_line_pitch": "For geophysicists and exploration geologists: enter first-arrival times and distances from a refraction survey to instantly compute P-wave velocities and depth to the refractor using the intercept-time method.",
+    "description": "The tool implements the intercept-time method for a two-layer horizontal seismic refraction model.\n\nInputs:\n- Distance array (m): a comma-separated list of source-to-receiver distances (positive, increasing).\n- First arrival time array (ms): comma-separated list of corresponding first-arrival travel times (≥0).\n- Both must be same length, at least 6 points.\n\nCore calculation steps:\n1. Sort (distance, time) pairs by distance.\n2. Initial split: first round(0.25 × N) points as direct arrivals, remainder as refracted.\n3. Perform linear regression (distance vs time) on each subset to get slopes and intercepts.\n4. Compute crossover distance Xc = (b2 - b1) / (m1 - m2) where m1=1/V1, b1=intercept for direct; m2=1/V2, b2=intercept for refracted.\n5. Reassign: points with distance ≤ Xc are direct, > Xc are refracted; recompute regressions.\n6. Compute V1 = 1 / (slope of direct regression), V2 = 1 / (slope of refracted regression).\n7. Compute intercept time ti = intercept of refracted regression line (ms).\n8. Compute depth to interface: h = (ti * V1 * V2) / (2 * sqrt(V2² - V1²)).\n9. Output both velocities in km/s, depth in meters, crossover distance in meters.\n10. Show a travel-time plot with data points and both best-fit lines (direct dashed, refracted solid).\n11. Provide a classification: if V1 < 1.5 km/s -> 'Unconsolidated soil'; 1.5–2.5 km/s -> 'Weathered rock'; else 'Competent rock'.\n12. Output a downloadable CSV with distance, time, fitted direct time, fitted refracted time.\n\nUI (Gradio):\n- Left column: two textboxes for distance and time arrays; 'Compute' button.\n- Right column: matplotlib plot (travel-time graph) and a text box showing V1, V2, depth, crossover distance, classification.\n- Below: 'Download CSV' button.\n\nNo AI/ML component; pure deterministic calculation with iterative regression.",
+    "image_prompt": "A clean professional scientific diagram showing a seismic refraction survey: a cross-section with two horizontal layers, a shot point on the surface, and a line of geophones with ray paths refracting at the interface, in a modern technical illustration style, wide banner composition.",
+    "slug": "seismic-refraction-two-layer-calculator",
+    "module_name": "seismic_refraction_two_layer_calculator",
+    "repo_url": "https://github.com/Nora-Research-Lab/seismic-refraction-two-layer-calculator",
+    "shipped_at": "2026-09-28T20:45:41.423838Z"
   }
 ]
