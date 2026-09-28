@@ -416,5 +416,20 @@
     "module_name": "forest_fire_danger_index_calculator",
     "repo_url": "https://github.com/Nora-Research-Lab/forest-fire-danger-index-calculator",
     "shipped_at": "2026-09-27T22:16:05.024902Z"
+  },
+  {
+    "tool_name": "Tilted Solar Irradiance Calculator",
+    "industry": "Renewable Energy Site Assessment",
+    "one_line_pitch": "For renewable energy analysts and solar site assessors: enter location, date/time, panel orientation, and ground albedo to instantly compute the plane-of-array irradiance using a clear-sky model.",
+    "description": "Inputs: (1) Latitude (decimal degrees, -90 to 90), (2) Date (YYYY-MM-DD), (3) UTC-offset (hours, -12 to 14), (4) Local time (HH:MM, 24-hour), (5) Panel tilt from horizontal (0-90°), (6) Panel azimuth (0-360° where 0°=north, 90°=east, 180°=south, 270°=west), (7) Ground albedo (0-1, typical: grass=0.25, snow=0.8).\n\nCalculation logic (step-by-step):\n1. Compute day number n from date.\n2. Solar declination: δ = 23.45° * sin(360/365 * (n - 81)).\n3. Solar time: local time + (4 min)*(longitude correction optional if longitude provided, else assume local standard meridian). For simplicity, skip longitude correction and use local standard meridian based on UTC offset: LS = 15° * UTC_offset. If user enters longitude, compute time correction if provided. Otherwise assume standard.\n4. Hour angle h = (solar_time_hours - 12) * 15°.\n5. Solar zenith angle θz: cos(θz) = sin(φ)*sin(δ) + cos(φ)*cos(δ)*cos(h), where φ = latitude.\n6. Solar elevation α = 90° - θz.\n7. Solar azimuth γs: using standard formula with sign convention, calculate sin(γs) and cos(γs).\n8. Clear-sky direct normal irradiance DNI using Hottel's model: DNI = DNI0 * τ, where DNI0 = 1367 * (1 + 0.033*cos(360*n/365)) and τ = a0 + a1*exp(-k/cos(θz)). a0, a1, k depend on altitude and climate type (use default: a0=0.423, a1=0.506, k=0.285 for standard clear sky with 23 km visibility). Clamp if cos(θz) < 0.1.\n9. Diffuse horizontal irradiance DHI = 0.5 * DNI0 * (1 - τ) * sin(α) / (1 - 1.4*ln(τ))) — simplified from Hottel's diffuse model? Actually use: DHI = DNI * (0.271 - 0.294*τ) for clear sky? Use standard relationship: Diffuse fraction = 0.3 * (1 - τ) if τ>0.15 else 0.7. Better to use a simple isotropic correlation: DHI = DNI0 * (0.271 - 0.294*τ). Then GHI = DNI * cos(θz) + DHI.\n10. Angle of incidence on tilted surface: cos(θ) = cos(θz)*cos(tilt) + sin(θz)*sin(tilt)*cos(γs - azimuth).\n11. Direct beam on tilted = DNI * cos(θ).\n12. Sky diffuse on tilted = DHI * (1+cos(tilt))/2.\n13. Ground-reflected on tilted = GHI * albedo * (1-cos(tilt))/2.\n14. Total plane-of-array irradiance (POA) = beam + sky + ground.\n\nOutput: Numeric display of solar zenith, solar elevation, solar azimuth, DNI, DHI, GHI, and POA irradiance. Also show a small plot (using matplotlib, embedded in Gradio) of solar position on a sky dome or just the POA value. No file download needed.\n\nUI layout: Two columns. Left column inputs (latitude, date, time, offset, tilt, azimuth, albedo, optional longitude). A ",
+    "     ,    ": "   ",
+    "     .   ": "     :    ",
+    "   :    ": "     .   :    ",
+    "     :    ": "     :    ",
+    "image_prompt": "A clean, professional illustration of a solar panel array tilted toward the sun, with labeled angles (tilt, azimuth) and a diagram showing beam, diffuse, and reflected radiation components. Minimalist style, wide banner composition, no text.",
+    "slug": "tilted-solar-irradiance-calculator",
+    "module_name": "tilted_solar_irradiance_calculator",
+    "repo_url": "https://github.com/Nora-Research-Lab/tilted-solar-irradiance-calculator",
+    "shipped_at": "2026-09-28T06:31:07.422169Z"
   }
 ]
