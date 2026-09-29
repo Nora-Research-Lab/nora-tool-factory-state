@@ -475,5 +475,16 @@
     "module_name": "longshore_transport_rate_calculator",
     "repo_url": "https://github.com/Nora-Research-Lab/longshore-transport-rate-calculator",
     "shipped_at": "2026-09-29T06:18:26.301594Z"
+  },
+  {
+    "tool_name": "USCS Soil Classifier",
+    "industry": "Geotechnical Engineering",
+    "one_line_pitch": "For geotechnical engineers and engineering geologists: enter grain-size percentages and Atterberg limits to instantly get the Unified Soil Classification System (USCS) group symbol and name.",
+    "description": "The USCS Soil Classifier takes basic index properties of a soil sample and classifies it according to ASTM D2487. The user inputs: gravel percentage (>4.75 mm), sand percentage (0.075–4.75 mm), fines percentage (<0.075 mm, with silt vs clay distinguished via LL and PI), liquid limit (LL, %), plastic limit (PL, %), and for coarse soils (gravel+sand >50%): coefficient of uniformity (Cu) and coefficient of curvature (Cc). The core logic follows the USCS flow chart: first, if fines < 5%, classify based on Cu and Cc into well-graded (GW/SW) or poorly graded (GP/SP); if fines 5–12%, add dual symbols (e.g., SW-SC); if fines >12%, use plasticity chart (LL vs PI) to determine if fines are silt (M) or clay (C) and whether they are low (L) or high (H) plasticity. Also handle peat (PT) if organic content is indicated – a checkbox for organic. Output includes: USCS group symbol (e.g., SP-SM), group name (e.g., poorly graded sand with silt), and a simple text description (e.g., 'Sand with silt, low plasticity fines'). The Gradio UI has numeric inputs (sliders or text boxes) for percentages (constrained to sum 100), LL, PL, Cu, Cc, and a checkbox 'Organic?'. A 'Classify' button triggers the logic. Results are shown in a large text box and optionally a small bar chart of grain size distribution (simulated from percentages). No AI/ML component – pure rule-based classification. The tool is single-screen, responsive, and intended for quick field or lab classification.",
+    "image_prompt": "A professional illustration of a soil sample being sieved on a stack of sieves, with a USCS plasticity chart in the background, clean flat-style infographic, wide banner composition.",
+    "slug": "uscs-soil-classifier",
+    "module_name": "uscs_soil_classifier",
+    "repo_url": "https://github.com/Nora-Research-Lab/uscs-soil-classifier",
+    "shipped_at": "2026-09-29T13:13:22.700721Z"
   }
 ]
