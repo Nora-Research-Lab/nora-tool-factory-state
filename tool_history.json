@@ -464,5 +464,16 @@
     "module_name": "horton_infiltration_calculator",
     "repo_url": "https://github.com/Nora-Research-Lab/horton-infiltration-calculator",
     "shipped_at": "2026-09-29T00:40:28.027284Z"
+  },
+  {
+    "tool_name": "Longshore Transport Rate Calculator",
+    "industry": "Coastal & Sedimentary Studies",
+    "one_line_pitch": "For coastal engineers and geoscientists: enter wave height, angle, and sediment characteristics to instantly compute annual longshore sediment transport using the CERC formula.",
+    "description": "The Longshore Transport Rate Calculator implements the Coastal Engineering Research Center (CERC) formula for longshore sediment transport. The user provides three wave parameters at breaking: significant wave height H_b (in meters, range 0.1–10 m), wave angle relative to the shoreline α_b (in degrees, range 0–90°), and wave peak period T_p (in seconds, range 2–20 s). Additional inputs: sediment type selection from dropdown (fine sand, medium sand, coarse sand, gravel) which sets a default dimensionless K coefficient (0.77, 0.92, 1.1, 1.3 respectively) based on published values; the user may override K with a custom value (0.2–2.0). The calculation steps: 1) Breaker index γ = 0.78; breaker depth h_b = H_b / γ. 2) Group velocity at breaking C_g = sqrt(g * h_b) with g = 9.81 m/s². 3) Wave energy flux longshore component P_l = (ρ_w * g * H_b² * C_g * sin(2α_b)) / 16, where ρ_w = 1025 kg/m³. 4) Longshore sediment transport rate Q = K * P_l / (ρ_w * g * (s-1)*(1-p)), with s = 2.65 (quartz density ratio) and p = 0.4 (sediment porosity). 5) Convert Q from m³/s to m³/year (multiply by 31,536,000). 6) Classify: very low (<1,000), low (1,000–10,000), moderate (10,000–50,000), high (50,000–200,000), very high (>200,000) m³/yr. Gradio UI: row of inputs (H_b number, α_b slider 0–90°, T_p number, sediment type dropdown, K override number box); a compute button; outputs: numeric Q (m³/yr) with classification text, and a horizontal bar chart showing Q relative to class thresholds. No AI/ML component; purely deterministic engineering calculation.",
+    "image_prompt": "Coastal scene showing waves breaking at an angle to the shoreline, with sediment moving along the beach. Clean professional illustration style, wide banner composition, no text.",
+    "slug": "longshore-transport-rate-calculator",
+    "module_name": "longshore_transport_rate_calculator",
+    "repo_url": "https://github.com/Nora-Research-Lab/longshore-transport-rate-calculator",
+    "shipped_at": "2026-09-29T06:18:26.301594Z"
   }
 ]
