@@ -453,5 +453,16 @@
     "module_name": "seismic_refraction_two_layer_calculator",
     "repo_url": "https://github.com/Nora-Research-Lab/seismic-refraction-two-layer-calculator",
     "shipped_at": "2026-09-28T20:45:41.423838Z"
+  },
+  {
+    "tool_name": "Horton Infiltration Calculator",
+    "industry": "Soil Science",
+    "one_line_pitch": "For soil scientists and hydrologists: enter Horton infiltration parameters and a time range to instantly compute infiltration rate and cumulative infiltration with a plot.",
+    "description": "Inputs: (1) initial infiltration rate (f₀, mm/hr, numeric input), (2) steady infiltration rate (f_c, mm/hr, numeric input), (3) decay constant (k, 1/hr, numeric input), (4) time range start (t_start, hours, numeric), (5) time range end (t_end, hours, numeric), (6) time step (Δt, hours, numeric, default 0.1). Core calculation uses Horton's equation: infiltration rate f(t) = f_c + (f₀ - f_c) * exp(-k * t). Cumulative infiltration F(t) = f_c * t + (f₀ - f_c)/k * (1 - exp(-k*t)). The tool generates a time vector from t_start to t_end at Δt increments, then computes f(t) and F(t) for each step. Gradio UI: a clean layout with inputs in a row at the top, a 'Compute' button, and two output areas: (a) a data table with columns t (hr), f(t) (mm/hr), F(t) (mm), sorted and scrollable; (b) a matplotlib dual-axis plot with time on x-axis, left y-axis for f(t) (line, blue), right y-axis for F(t) (line, green). The plot includes a horizontal dashed line at f_c for reference. Below the plot, a summary box shows total infiltration (final F(t_end) value) and time to reach near-steady state (when f(t) is within 5% of f_c). No AI/ML component; purely deterministic calculation. Download button for table as CSV.",
+    "image_prompt": "A wide banner illustration showing a field setting with a double-ring infiltrometer being used to measure soil water infiltration, with a stylized exponential decay curve graph overlaid, clean professional scientific illustration style.",
+    "slug": "horton-infiltration-calculator",
+    "module_name": "horton_infiltration_calculator",
+    "repo_url": "https://github.com/Nora-Research-Lab/horton-infiltration-calculator",
+    "shipped_at": "2026-09-29T00:40:28.027284Z"
   }
 ]
