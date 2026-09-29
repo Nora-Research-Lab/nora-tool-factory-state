@@ -486,5 +486,16 @@
     "module_name": "uscs_soil_classifier",
     "repo_url": "https://github.com/Nora-Research-Lab/uscs-soil-classifier",
     "shipped_at": "2026-09-29T13:13:22.700721Z"
+  },
+  {
+    "tool_name": "Wave Dispersion Calculator",
+    "industry": "Oceanography / Marine Geoscience",
+    "one_line_pitch": "For oceanographers and coastal scientists: enter wave period and water depth to instantly compute wavelength, phase speed, group velocity, and wave classification.",
+    "description": "The tool computes the full linear wave dispersion solution. Inputs: (1) wave period T in seconds (float, range 1–30, default 10), (2) water depth d in meters (float, range 0.1–5000, default 10). Using the dispersion relation ω² = g k tanh(k d) where ω = 2π/T and g = 9.80665 m/s², the wavenumber k is found via a Newton-Raphson solver starting from an initial guess using the Eckart approximation: k₀ = ω²/g * coth( (ω² d / g)^0.75 ). The solver iterates until |f(k)| < 1e-8. Outputs: wavenumber k (rad/m, 4 decimals), wavelength L = 2π/k (m, 2 decimals), phase speed c = ω/k (m/s, 2 decimals), group velocity cg = 0.5 * c * (1 + 2kd / sinh(2kd)) (m/s, 2 decimals). A classification dropdown: if d/L < 0.05 → 'Shallow Water', if d/L > 0.5 → 'Deep Water', else 'Intermediate Water'. A secondary classification for Ursell number is optionally shown: if wave height H is also provided (optional input, default 1 m), compute Ursell number Ur = (H/L) / (d/L)³ and classify: Ur < 0.01 → linear waves, 0.01–0.1 → weakly nonlinear, >0.1 → strongly nonlinear (Stokes). The Gradio UI has a numerical input box for T (with slider), a numerical input box for d (with slider), and optional H input. Outputs are displayed as a set of labeled numbers and a classification badge. Also a matplotlib figure showing the dispersion curve (c vs T) for the given depth, with the current T marked. The figure is generated on the fly and displayed below the outputs. No AI/ML component.",
+    "image_prompt": "A clean professional illustration of ocean waves with labeled parameters: wave period, depth, wavelength, and phase speed. Include a small inset graph showing the dispersion relation curve. Style: flat vector, blue tones, wide banner composition.",
+    "slug": "wave-dispersion-calculator",
+    "module_name": "wave_dispersion_calculator",
+    "repo_url": "https://github.com/Nora-Research-Lab/wave-dispersion-calculator",
+    "shipped_at": "2026-09-29T18:44:17.100342Z"
   }
 ]
