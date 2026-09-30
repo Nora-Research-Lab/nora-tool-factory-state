@@ -519,5 +519,16 @@
     "module_name": "gutenberg_richter_b_value_calculator",
     "repo_url": "https://github.com/Nora-Research-Lab/gutenberg-richter-b-value-calculator",
     "shipped_at": "2026-09-30T01:40:56.494487Z"
+  },
+  {
+    "tool_name": "Impact Melt Volume Estimator",
+    "industry": "Planetary Geoscience",
+    "one_line_pitch": "For planetary geoscientists and impact specialists: enter crater diameter and target rock type to instantly estimate the volume of impact melt produced.",
+    "description": "**Inputs:** (1) Crater diameter (D) in kilometers, numeric input with step 0.01 from 0.1 to 1000. (2) Target rock type, a dropdown with options: 'Silicate (e.g. lunar highlands, martian crust)', 'Carbonate-rich (e.g. sedimentary basins)', 'Ice/Snow (e.g. polar caps)'. (3) (Optional) checkbox to include uncertainty bounds.\n\n**Core calculation:** Uses established empirical power-law relations from Grieve & Cintala (1992, 1997) and Pierazzo et al. (1997) for impact melt volume (M, in km³) as a function of D (km):\n- Silicate: log₁₀(M) = 0.253 + 2.764 × log₁₀(D)  (σ ~0.2)\n- Carbonate: log₁₀(M) = -0.663 + 3.194 × log₁₀(D)\n- Ice/Snow: log₁₀(M) = -1.040 + 3.500 × log₁₀(D)  (based on laboratory relations)\nIf uncertainty checkbox is ticked, the tool also reports the upper/lower bounds using the standard deviation σ. The computed M is checked against a sanity threshold: M should not exceed the crater's excavated volume (approximated as 0.3 × D³). If exceeded, a warning is shown.\n\n**Output:** (1) Numerical value: 'Estimated melt volume: X.XX km³' (with ± bounds if selected). (2) A qualitative classification: Miniscule (<0.1 km³), Small (0.1–10 km³), Moderate (10–1000 km³), Large (1000–10⁵ km³), Basin-scale (>10⁵ km³). (3) A horizontal bar chart showing the melt volume relative to typical lunar and terrestrial impact melts for reference (using sample bodies: Moon, Earth, Mars). The chart is generated using matplotlib. (4) A short interpretive sentence: e.g., 'This melt volume is comparable to the lunar crater Copernicus.' based on simple lookup of reference craters embedded in code.\n\n**UI layout:** Vertical layout: title, then two inputs side-by-side (Diameter and Target type), checkbox, then 'Calculate' button. Output area below displays the numeric result, classification badge, bar chart, and interpretive sentence. Clean, science-report style with a dark background option.\n\n**AI/ML component:** None. Pure empirical geophysical relationships.",
+    "image_prompt": "A cross-sectional cutaway of a planetary impact crater showing a central melt pool and ejecta blanket, scientific illustration style with muted blues and greys, wide banner composition suitable for a header.",
+    "slug": "impact-melt-volume-estimator",
+    "module_name": "impact_melt_volume_estimator",
+    "repo_url": "https://github.com/Nora-Research-Lab/impact-melt-volume-estimator",
+    "shipped_at": "2026-09-30T07:37:56.947542Z"
   }
 ]
