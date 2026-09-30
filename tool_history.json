@@ -530,5 +530,16 @@
     "module_name": "impact_melt_volume_estimator",
     "repo_url": "https://github.com/Nora-Research-Lab/impact-melt-volume-estimator",
     "shipped_at": "2026-09-30T07:37:56.947542Z"
+  },
+  {
+    "tool_name": "Riprap Stone Size Calculator",
+    "industry": "Construction / Infrastructure Geology",
+    "one_line_pitch": "For construction geologists and civil engineers: enter flow velocity, bank slope angle, and rock density to instantly compute the required median stone diameter (D50) for riprap erosion protection using the Isbash equation.",
+    "description": "Inputs: (1) Flow velocity (m/s or ft/s, user-selectable via radio button), default 3 m/s, range 0.5–10 m/s; (2) Bank slope angle (degrees), default 30°, range 0–60°; (3) Rock density (kg/m³ or lb/ft³, matching velocity unit), default 2650 kg/m³; (4) Safety factor (unitless), default 1.2, range 1.0–2.0. The core calculation uses the Isbash equation: D50 = (V² × SF) / (2 × g × (Sr − 1) × cos(θ)), where V = flow velocity, SF = safety factor, g = 9.81 m/s² or 32.174 ft/s², Sr = specific gravity of rock (rock density / water density), θ = bank slope angle in radians. Water density is 1000 kg/m³ or 62.4 lb/ft³. The output D50 is computed in meters and then converted to millimeters and inches. A classification table is applied: D50 < 150 mm → 'Small riprap (fine gravel)'; 150–300 mm → 'Medium riprap'; 300–500 mm → 'Large riprap'; > 500 mm → 'Very large riprap (boulders)'. The Gradio UI displays four input components (number input or slider for velocity, slider for slope, number input for density, slider for safety factor, and a radio button for unit system). A 'Calculate' button triggers the computation. Outputs: (a) a numeric display showing D50 in mm and inches, (b) a text display of the classification, and (c) a bar chart comparing the computed D50 against the three classification thresholds (150, 300, 500 mm) with color-coded bars (green if safe, red if exceeds threshold). No AI/ML component is used; the tool is purely deterministic.",
+    "image_prompt": "A wide banner illustration showing a cross-section of a riverbank with layered riprap stones of various sizes protecting the slope, with water flowing against the rocks. Clean, professional engineering illustration style, no text or logos.",
+    "slug": "riprap-stone-size-calculator",
+    "module_name": "riprap_stone_size_calculator",
+    "repo_url": "https://github.com/Nora-Research-Lab/riprap-stone-size-calculator",
+    "shipped_at": "2026-09-30T14:14:16.602452Z"
   }
 ]
