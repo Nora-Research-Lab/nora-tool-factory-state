@@ -541,5 +541,16 @@
     "module_name": "riprap_stone_size_calculator",
     "repo_url": "https://github.com/Nora-Research-Lab/riprap-stone-size-calculator",
     "shipped_at": "2026-09-30T14:14:16.602452Z"
+  },
+  {
+    "tool_name": "Channel Sinuosity Classifier",
+    "industry": "Geomorphology",
+    "one_line_pitch": "For geomorphologists and hydrologists: enter channel length and valley length to instantly compute the sinuosity index and classify the channel planform.",
+    "description": "**Inputs:**\n- Total channel length (Lc): a positive float, units in km or m (user chooses units, but calculation is ratio so units cancel).\n- Straight-line valley length (Lv): a positive float, same units as channel length. Must be less than or equal to channel length; validation ensures Lv <= Lc, else an error message is shown.\n\n**Core calculation:**\nSinuosity Index (SI) = Lc / Lv.\n\n**Classification thresholds:**\n- SI < 1.05: \"Straight\"\n- 1.05 ≤ SI < 1.5: \"Sinuous\"\n- 1.5 ≤ SI < 2.0: \"Meandering\"\n- SI ≥ 2.0: \"Highly Meandering\"\n\n**Gradio UI layout:**\n- Two number input fields side by side, labeled \"Channel Length (Lc)\" and \"Valley Length (Lv)\", with unit selectors (km / m) beside each.\n- A \"Calculate\" button.\n- Output area below: a text box showing \"Sinuosity Index: X.XX (Classification)\" and a small matplotlib figure. The figure shows a schematic: a horizontal dashed line (valley length) with endpoint markers, and a sine wave-like curve (channel) that is longer and wavy above it, with labels \"Lv\" and \"Lc\". The plot is purely illustrative, not to scale, and automatically adjusts the sine wave amplitude/wavelength based on the SI value (higher SI -> more waves/amplitude). Also display the classification thresholds as a small table or bullet list below the plot.\n- No AI; pure calculation and classification logic.\n\n**Output:**\n- A numeric SI value rounded to two decimals.\n- A classification label with colour coding: green for straight, yellow for sinuous, orange for meandering, red for highly meandering.\n- The schematic plot and threshold table.\n\nNo downloadable files, but the plot can be exported via Gradio's built-in save feature.",
+    "image_prompt": "A clean, scientific illustration of a meandering river channel seen from above, with the measured channel curving back and forth and a dashed straight line indicating the valley length. Wide banner composition, no text, professional diagram style.",
+    "slug": "channel-sinuosity-classifier",
+    "module_name": "channel_sinuosity_classifier",
+    "repo_url": "https://github.com/Nora-Research-Lab/channel-sinuosity-classifier",
+    "shipped_at": "2026-09-30T19:22:28.935891Z"
   }
 ]
