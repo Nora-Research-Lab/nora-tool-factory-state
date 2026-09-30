@@ -508,5 +508,16 @@
     "module_name": "geochemical_geothermometer",
     "repo_url": "https://github.com/Nora-Research-Lab/geochemical-geothermometer",
     "shipped_at": "2026-09-29T22:43:33.628455Z"
+  },
+  {
+    "tool_name": "Gutenberg-Richter b-Value Calculator",
+    "industry": "Seismology",
+    "one_line_pitch": "For seismologists and hazard analysts: enter a list of earthquake magnitudes to instantly compute the b-value, a-value, and Gutenberg-Richter frequency-magnitude distribution plot.",
+    "description": "Inputs: (1) A text box or file upload for earthquake magnitudes (comma-, space-, or line-separated numbers, at least 10 values). The tool will parse the values and display the count. (2) A number input for the minimum completeness magnitude Mc (default: 2.5, range 0–10, step 0.1). (3) An optional bin width slider (default 0.1, range 0.01–0.5). Core logic: (a) Filter magnitudes ≥ Mc. (b) Compute the magnitude bins: from floor(min(filtered)/bin_width)*bin_width to ceil(max(filtered)/bin_width)*bin_width. (c) Count events per bin. (d) Compute cumulative counts (≥M) per bin. (e) For bins with at least one event, fit the Gutenberg-Richter law log10(N) = a - b*M using least-squares regression on the cumulative counts (fitted in log space). (f) Also compute b-value using Aki's maximum likelihood formula: b = log10(e) / (mean(M) - Mc), where mean is of filtered magnitudes. (g) Compute a-value as log10(total events above Mc) + b*Mc. (h) Output: the b-value (ML method), the b-value (LS fit), the a-value, the total number of events above Mc, the magnitude of completeness Mc, and the standard deviation of b (for ML: std = b / sqrt(N)). Also compute the predicted number of events per year if a time interval is provided? Keep simple: no time needed, just counts. But the tool could optionally ask for a time period (years) to convert a-value to annual rate? Let's keep it simpler: just plot the histogram and the fitted line. Output: A matplotlib figure showing the frequency-magnitude histogram (bars for binned counts) and the fitted G-R line (log10 cumulative vs magnitude) with legends. Also display numerical results as text. Layout: Gradio interface with input components: (a) Textbox for magnitudes (label 'Input magnitudes (comma/space/newline separated)'), (b) File upload for .txt or .csv (if uploaded, parse column of magnitudes), (c) Number input for Mc, (d) Slider for bin width. Outputs: (a) A plot component, (b) A text component showing calculated parameters. No AI/ML component.",
+    "image_prompt": "A clean, professional illustration showing a seismograph trace on the left and a frequency-magnitude plot (Gutenberg-Richter distribution) on the right, with a log-linear scale and a slanted line, in a wide banner composition. Technical diagram style, blue-gray tones.",
+    "slug": "gutenberg-richter-b-value-calculator",
+    "module_name": "gutenberg_richter_b_value_calculator",
+    "repo_url": "https://github.com/Nora-Research-Lab/gutenberg-richter-b-value-calculator",
+    "shipped_at": "2026-09-30T01:40:56.494487Z"
   }
 ]
