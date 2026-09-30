@@ -552,5 +552,16 @@
     "module_name": "channel_sinuosity_classifier",
     "repo_url": "https://github.com/Nora-Research-Lab/channel-sinuosity-classifier",
     "shipped_at": "2026-09-30T19:22:28.935891Z"
+  },
+  {
+    "tool_name": "Bearing and Distance Calculator",
+    "industry": "GIS & Spatial Analysis",
+    "one_line_pitch": "For GIS analysts, surveyors, and field geologists: enter two sets of decimal-degree coordinates to instantly compute the great-circle distance and initial/back bearings between them.",
+    "description": "**Inputs**: The user provides four coordinate values: Point 1 latitude, Point 1 longitude, Point 2 latitude, Point 2 longitude — all in decimal degrees (float, with validation: lat ±90, lon ±180). A dropdown lets the user choose output distance units: kilometers, miles, or nautical miles. A 'Calculate' button triggers the computation.\n\n**Core calculation**: The tool implements the Haversine formula for great-circle distance and the standard bearing formula.\n\nStep 1: Convert all degree values to radians.\nStep 2: Compute differences: Δlat = lat2 - lat1, Δlon = lon2 - lon1.\nStep 3: Distance via Haversine:\n  a = sin²(Δlat/2) + cos(lat1) * cos(lat2) * sin²(Δlon/2)\n  c = 2 * atan2(√a, √(1-a))\n  d = R * c, where R is Earth radius (6371 km, 3959 miles, 3440 NM) selected per unit.\nStep 4: Initial bearing:\n  θ = atan2(sin(Δlon)*cos(lat2), cos(lat1)*sin(lat2) - sin(lat1)*cos(lat2)*cos(Δlon))\n  Convert θ from radians to degrees, normalize to 0–360°.\n  Back bearing = (bearing + 180) % 360.\n\n**Output**: The tool displays three results: (a) Distance in the selected unit with two decimal places, (b) Initial bearing in degrees (e.g., '45.23°'), (c) Back bearing in degrees. All outputs are read-only text boxes. No plot is generated.\n\n**UI**: Built with Gradio. Layout: two columns — left column for inputs (four number boxes for lat/lon, a dropdown for units, and a button), right column for outputs (three text boxes stacked). The page includes concise instructions and a disclaimer about Earth-spheroid approximations.\n\n**AI component**: None. This is a pure trigonometric calculator.",
+    "image_prompt": "A clean professional illustration of a compass rose overlaid on a stylized world map with latitude and longitude gridlines, with a curved arc connecting two glowing points, wide banner composition, scientific style.",
+    "slug": "bearing-and-distance-calculator",
+    "module_name": "bearing_and_distance_calculator",
+    "repo_url": "https://github.com/Nora-Research-Lab/bearing-and-distance-calculator",
+    "shipped_at": "2026-09-30T23:10:40.326883Z"
   }
 ]
