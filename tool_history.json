@@ -574,5 +574,16 @@
     "module_name": "thornthwaite_pet_calculator",
     "repo_url": "https://github.com/Nora-Research-Lab/thornthwaite-pet-calculator",
     "shipped_at": "2026-10-01T02:13:07.364489Z"
+  },
+  {
+    "tool_name": "Degree-Day Melt Model",
+    "industry": "Glaciology / Cryosphere",
+    "one_line_pitch": "For glaciologists and hydrologists: enter daily temperature data and a melt factor to compute cumulative positive degree-days and snow/ice melt over a season.",
+    "description": "Functional spec:\n\n(a) Inputs:\n- A text area where the user pastes or types a time series of daily mean air temperatures (in °C), one value per line or comma-separated.\n- A numeric input for the melt factor (mm/°C/day), default 5.0, with typical range 2–10, shown alongside brief guidance (snow: 3–5, ice: 6–8).\n- A numeric input for the threshold temperature (in °C), default 0.0.\n- A \"Calculate\" button.\n\n(b) Core logic (step by step):\n1. Parse the temperature list; if empty or malformed, show an error.\n2. For each daily temperature T_i, compute the positive degree-day value: PDD_i = max(T_i - threshold, 0).\n3. Sum all PDD_i to get total positive degree-days (PDD_total, in °C·days).\n4. For each day, compute daily melt: M_i = melt_factor × PDD_i (in mm water equivalent).\n5. Sum M_i to get cumulative seasonal melt (in mm w.e.).\n6. Optionally compute a simple classification: if cumulative melt < 100 mm → \"Low melt season\"; 100–500 mm → \"Moderate melt season\"; >500 mm → \"High melt season\".\n7. Generate a matplotlib figure: a line plot of cumulative melt over time (days on x-axis, cumulative melt in mm on y-axis) and a secondary plot (subplot or twin axis) of daily melt as bars.\n\n(c) Gradio UI layout:\n- Title: \"Degree-Day Melt Model\"\n- Row 1: text box for temperature series (label \"Daily mean temperatures (°C)\", height enough for ~30 lines).\n- Row 2: two numeric inputs side-by-side: \"Melt factor (mm/°C/day)\" and \"Threshold temperature (°C)\".\n- Row 3: a \"Calculate\" button.\n- Output area: below the button, display:\n   - Three numerical readouts: Total Positive Degree-Days, Cumulative Melt (mm w.e.), Melt Season Classification.\n   - A matplotlib plot showing daily melt (bar) and cumulative melt (line), with clear axis labels and legend.\n- (Optional) a brief note: \"Data source: typical melt factors — snow 3–5, ice 6–8.\"\n\n(d) Output:\n- Numbers: total PDD (to one decimal), total cumulative melt (to integer mm), classification string.\n- Plot: matplotlib figure rendered in Gradio.\n\n(e) AI/ML component: None. All calculations are deterministic and rule-based.",
+    "image_prompt": "A wide banner illustration showing a melting glacier with streams of meltwater flowing across the ice surface, a clear sky, and a simple temperature graph overlay in the corner. Clean scientific illustration style, no text.",
+    "slug": "degree-day-melt-model",
+    "module_name": "degree_day_melt_model",
+    "repo_url": "https://github.com/Nora-Research-Lab/degree-day-melt-model",
+    "shipped_at": "2026-10-01T15:51:56.239956Z"
   }
 ]
