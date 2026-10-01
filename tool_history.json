@@ -585,5 +585,16 @@
     "module_name": "degree_day_melt_model",
     "repo_url": "https://github.com/Nora-Research-Lab/degree-day-melt-model",
     "shipped_at": "2026-10-01T15:51:56.239956Z"
+  },
+  {
+    "tool_name": "Heavy Metal Enrichment Factor Calculator",
+    "industry": "Environmental Geoscience",
+    "one_line_pitch": "For environmental geoscientists and soil quality analysts: enter metal concentration in soil and a background reference to instantly compute the enrichment factor (EF) and contamination classification.",
+    "description": "**Inputs:**\n- Dropdown to select a heavy metal element: Pb, Cd, Hg, As, Cu, Zn, Cr, Ni, or 'Other'. If an element is selected, its crustal average concentration (mg/kg) is auto-loaded as the default background value (from a hardcoded lookup table). If 'Other' is selected, the background input is enabled and must be entered manually.\n- Numeric input 'Metal concentration in sample (mg/kg)' – user-entered, must be > 0.\n- Numeric input 'Background/Reference concentration (mg/kg)' – pre-filled with crustal value for the chosen element, but user can overwrite.\n- A 'Calculate' button.\n\n**Core logic:**\n1. Read sample concentration C_sample and background concentration C_bg.\n2. Compute enrichment factor: EF = C_sample / C_bg.\n3. Classify EF according to standard thresholds:\n   - EF < 1: 'No enrichment'\n   - 1 ≤ EF < 3: 'Minor enrichment'\n   - 3 ≤ EF < 5: 'Moderate enrichment'\n   - 5 ≤ EF < 10: 'Moderately severe enrichment'\n   - 10 ≤ EF < 25: 'Severe enrichment'\n   - EF ≥ 25: 'Very severe enrichment'\n4. Assign a color for classification display (green to dark red).\n\n**Outputs:**\n- Large centered number showing EF rounded to 2 decimals.\n- Text classification with colored badge.\n- A simple horizontal bar plot (matplotlib) showing the EF value on a scale from 0 to 30, with class boundary markers. The plot is rendered as a Gradio Plot component.\n\n**Gradio UI:**\n- gr.Blocks with a title and simple instructions.\n- Two columns: left column contains the element dropdown and the two numeric inputs (side by side).\n- Button centered below.\n- Output area: row with EF number and classification badge on the left, plot on the right.\n- Clean, professional look with minimal clutter.\n\n**AI/ML:** None required; purely deterministic calculations.",
+    "image_prompt": "A clean professional illustration of a soil sample vial with a visual gauge or bar graph showing enrichment levels, flat vector style, wide banner composition, no text.",
+    "slug": "heavy-metal-enrichment-factor-calculator",
+    "module_name": "heavy_metal_enrichment_factor_calculator",
+    "repo_url": "https://github.com/Nora-Research-Lab/heavy-metal-enrichment-factor-calculator",
+    "shipped_at": "2026-10-01T20:43:08.722323Z"
   }
 ]
