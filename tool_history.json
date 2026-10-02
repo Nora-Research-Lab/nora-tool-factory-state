@@ -640,5 +640,16 @@
     "module_name": "gold_cut_off_grade_calculator",
     "repo_url": "https://github.com/Nora-Research-Lab/gold-cut-off-grade-calculator",
     "shipped_at": "2026-10-02T17:56:45.111474Z"
+  },
+  {
+    "tool_name": "Natural Gas Z-Factor Calculator",
+    "industry": "Petroleum & Oil/Gas",
+    "one_line_pitch": "For petroleum engineers and gas reservoir analysts: enter pressure, temperature, and gas gravity to instantly compute the compressibility factor (Z) using the Dranchuk-Abou-Kassem correlation.",
+    "description": "The tool calculates the natural gas compressibility factor (Z) using the Dranchuk-Abou-Kassem (DAK) correlation, which is a standard empirical EOS-based method for hydrocarbon gases.\n\nInputs:\n- Pressure (psia or MPa) — numeric input with unit toggle.\n- Temperature (°F or °C) — numeric input with unit toggle.\n- Gas gravity (dimensionless, typically 0.55–1.2) — slider or number input.\n- Optional: Gas composition (mole fractions of CO2, N2, H2S) if known, else defaults to 0. This is used to compute pseudo-critical properties via the Wichert-Aziz correction.\n\nCore Logic:\n1. If no composition given, pseudo-critical temperature (Tpc) and pseudo-critical pressure (Ppc) are estimated from gas gravity using standard correlations: Tpc = 168 + 325*γ - 12.5*γ²; Ppc = 677 + 15.0*γ - 37.5*γ² (for γ ≥ 0.75, use alternative equations).\n2. Apply Wichert-Aziz correction if CO2+H2S mole fraction > 0.\n3. Compute pseudo-reduced temperature (Tpr = T/Tpc) and pseudo-reduced pressure (Ppr = P/Ppc).\n4. Solve the DAK equation for Z using the Newton-Raphson method. The equation is a modified Benedict-Webb-Rubin type with 11 coefficients (A1..A11). Iterate until convergence (|Z_new - Z_old| < 1e-6).\n5. Return Z-factor and optionally gas formation volume factor (Bg = 0.02827*Z*T/P in bbl/scf).\n\nGradio UI Layout:\n- Top: Title and brief description.\n- First row: two columns. Left: Pressure input (number + unit dropdown). Right: Temperature input (number + unit dropdown).\n- Second row: Gas gravity slider (0.55 to 1.2, step 0.01). Optional expandable section for gas composition (mole fractions CO2, N2, H2S each 0–1).\n- Compute button.\n- Output section: Z-factor (numeric, 4 decimals), gas Bg if selected, and a classification (e.g., Z > 0.9: 'Near-ideal', Z 0.7–0.9: 'Moderate deviation', Z < 0.7: 'High deviation'). Optionally a small plot of Z vs pressure over a range (user can input pressure range steps).\n\nNo AI/ML component; purely deterministic correlation with iterative solver.",
+    "image_prompt": "A clean professional illustration of a natural gas wellhead and pipeline in an arid landscape, with an inset graph showing a Z-factor vs pressure curve. Wide banner composition, scientific infographic style.",
+    "slug": "natural-gas-z-factor-calculator",
+    "module_name": "natural_gas_z_factor_calculator",
+    "repo_url": "https://github.com/Nora-Research-Lab/natural-gas-z-factor-calculator",
+    "shipped_at": "2026-10-02T22:02:55.078994Z"
   }
 ]
