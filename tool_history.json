@@ -607,5 +607,16 @@
     "module_name": "paleodiversity_index_calculator",
     "repo_url": "https://github.com/Nora-Research-Lab/paleodiversity-index-calculator",
     "shipped_at": "2026-10-02T00:19:37.667021Z"
+  },
+  {
+    "tool_name": "Rock Porosity & Absorption Calculator",
+    "industry": "Engineering Geology",
+    "one_line_pitch": "For engineering geologists and geotechnical engineers: enter dry, saturated, and submerged weights of a rock sample to instantly compute water absorption, apparent porosity, and bulk density.",
+    "description": "The tool provides classic rock physical property measurements used in engineering geology and geotechnical practice. Inputs: (1) Dry weight in grams (positive number), (2) Saturated weight in grams (must be greater than dry), (3) Submerged weight in grams (must be less than saturated). Calculations: Water absorption (%) = ((saturated - dry) / dry) × 100. Apparent porosity (%) = ((saturated - dry) / (saturated - submerged)) × 100. Bulk density (g/cm³) = dry weight / (saturated - submerged). All weights in same units (g). The tool also classifies porosity: very low (<1%), low (1-5%), moderate (5-15%), high (15-30%), very high (>30%). UI: three numeric input fields with clear labels and units, a 'Calculate' button, and an output section displaying the three computed values with 2 decimal places, plus a classification text (e.g., 'Porosity: 8.3% — Moderate'). There is no AI component; it is a deterministic physical calculation. The tool also includes a small table summarizing typical ranges for reference.",
+    "image_prompt": "A professional illustration of a rock sample suspended by a string in a graduated cylinder filled with water, with an electronic balance showing weights, clean and technical engineering geology style. Wide banner composition.",
+    "slug": "rock-porosity-absorption-calculator",
+    "module_name": "rock_porosity_absorption_calculator",
+    "repo_url": "https://github.com/Nora-Research-Lab/rock-porosity-absorption-calculator",
+    "shipped_at": "2026-10-02T05:58:31.950126Z"
   }
 ]
