@@ -629,5 +629,16 @@
     "module_name": "packer_test_permeability_calculator",
     "repo_url": "https://github.com/Nora-Research-Lab/packer-test-permeability-calculator",
     "shipped_at": "2026-10-02T12:09:28.703833Z"
+  },
+  {
+    "tool_name": "Gold Cut-off Grade Calculator",
+    "industry": "Mining & Minerals",
+    "one_line_pitch": "For mining engineers and gold miners: enter total operating cost, gold price, and recovery to instantly compute the cut-off grade in grams per tonne (g/t) and get an economic grade classification.",
+    "description": "**Inputs:**\n- Total operating cost (USD per tonne of ore) – numeric input, positive value.\n- Gold price (USD per troy ounce) – numeric input, positive value.\n- Recovery (%) – numeric input, between 0 and 100.\n\n**Core calculation (step by step):**\n1. Convert gold price per troy ounce to price per gram: price_per_g = gold_price / 31.1035.\n2. Compute revenue per gram after recovery: rev_per_g = price_per_g × (recovery / 100).\n3. Compute cut-off grade in g/t: cut_off_gpt = total_cost / rev_per_g.\n4. Compute cut-off grade in oz/t: cut_off_ozpt = cut_off_gpt / 31.1035.\n5. Classification: if cut_off_gpt < 1.0 → 'Low grade (subeconomic typical)'; if 1.0 ≤ cut_off_gpt ≤ 3.0 → 'Typical operating grade'; if cut_off_gpt > 3.0 → 'High grade (selective mining)'. Thresholds based on typical gold mining benchmarks.\n\n**Gradio UI layout:**\n- Title at top: 'Gold Cut-off Grade Calculator'.\n- Two-column layout: Inputs on the left, Outputs on the right.\n- Left column: three numeric inputs with labels and units (Total operating cost ($/t), Gold price ($/oz), Recovery (%)). A 'Calculate' button.\n- Right column: Large numeric display of cut-off grade (g/t) and (oz/t). Below that, a colored classification label (green for low, yellow for typical, red for high). A small bar chart showing cut-off grade relative to the three ranges (0-1, 1-3, >3) as a visual indicator.\n\n**Output:**\n- Cut-off grade in g/t and oz/t (two decimal places).\n- Classification text with associated color coding.\n- No downloadable files, no AI/ML component.",
+    "image_prompt": "A clean professional illustration of a gold nugget and ore samples resting on a geological map, with a calculator and pencil beside them, wide banner composition.",
+    "slug": "gold-cut-off-grade-calculator",
+    "module_name": "gold_cut_off_grade_calculator",
+    "repo_url": "https://github.com/Nora-Research-Lab/gold-cut-off-grade-calculator",
+    "shipped_at": "2026-10-02T17:56:45.111474Z"
   }
 ]
