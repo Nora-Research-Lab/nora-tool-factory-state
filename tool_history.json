@@ -618,5 +618,16 @@
     "module_name": "rock_porosity_absorption_calculator",
     "repo_url": "https://github.com/Nora-Research-Lab/rock-porosity-absorption-calculator",
     "shipped_at": "2026-10-02T05:58:31.950126Z"
+  },
+  {
+    "tool_name": "Packer Test Permeability Calculator",
+    "industry": "Geological Engineering",
+    "one_line_pitch": "For geological engineers and hydrogeologists: enter test section length, borehole diameter, injection pressure, and flow rate to instantly compute Lugeon value, hydraulic conductivity, and permeability classification.",
+    "description": "**Inputs (all user-provided):**\n1. Test section length (L, meters) — float.\n2. Borehole diameter (D, mm) — float.\n3. Injection pressure (P, bars) — float.\n4. Flow rate (Q, liters per minute) — float.\n5. Test type: dropdown with options 'Constant head' or 'Falling head'.\n6. (For falling head only) Standpipe inner diameter (d, mm) and initial/final water level change (Δh, m).\n\n**Core calculation / logic:**\n- Compute Lugeon value (Lu) = Q (L/min) / (L (m) × P (bar)). Standard: 1 Lu = 1 L/min/m/bar.\n- Hydraulic conductivity K (m/s): For constant head: K = (Q / (2π L Δh)) × ln(r_e/r_w) where r_e = effective radius (typically 0.5 m if no other info), r_w = D/2000 (m). Δh = pressure head = P × 10.2 (m of water). For falling head: K = (a × L) / (A × t) × ln(h1/h2) where a = standpipe cross-sectional area (m²), A = borehole cross-sectional area (m²), t = elapsed time (s), h1 and h2 initial and final heads (m).\n- Permeability classification: if K < 1e-7 m/s → 'Very low'; 1e-7 to 1e-5 → 'Low'; 1e-5 to 1e-3 → 'Moderate'; 1e-3 to 1e-1 → 'High'; > 1e-1 → 'Very high'. Also Lugeon interpretive classification: <1 → 'Tight'; 1-5 → 'Low'; 5-25 → 'Moderate'; >25 → 'High'.\n\n**Gradio UI layout:**\n- Top: title and brief instructions.\n- Input section with labeled numeric fields and dropdown.\n- A 'Calculate' button.\n- Output area below: three values (Lugeon, K, permeability class) displayed as cards with units. A small table showing both Lugeon and permeability classifications. Optionally a simple horizontal color bar indicating class.\n- No charts needed, but if falling head, show a simple plot of head vs time if multiple readings can be entered (optional: allow adding time-head data points as a textbox, then plot decay curve). To keep simple, just the basic case.\n\n**Output:**\n- Lugeon value (Lu) with one decimal.\n- Hydraulic conductivity (m/s) in scientific notation.\n- Permeability classification (text).\n- Lugeon classification (text).\n- No downloadable file unless user adds multiple measurements (optional).\n\n**AI/ML component:** None. Pure calculation with classification thresholds.",
+    "image_prompt": "A professional illustration of a packer test setup inside a borehole, showing a double packer inflated with water injection, rock layers, and a pressure gauge. Clean engineering drawing style, wide banner composition.",
+    "slug": "packer-test-permeability-calculator",
+    "module_name": "packer_test_permeability_calculator",
+    "repo_url": "https://github.com/Nora-Research-Lab/packer-test-permeability-calculator",
+    "shipped_at": "2026-10-02T12:09:28.703833Z"
   }
 ]
