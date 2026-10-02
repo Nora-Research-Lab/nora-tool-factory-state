@@ -596,5 +596,16 @@
     "module_name": "heavy_metal_enrichment_factor_calculator",
     "repo_url": "https://github.com/Nora-Research-Lab/heavy-metal-enrichment-factor-calculator",
     "shipped_at": "2026-10-01T20:43:08.722323Z"
+  },
+  {
+    "tool_name": "Paleodiversity Index Calculator",
+    "industry": "Paleontology",
+    "one_line_pitch": "For paleontologists and ecologists: enter species abundances to instantly compute species richness, Shannon index, Simpson index, and Pielou's evenness with a bar plot.",
+    "description": "The user provides a list of species names (text) and their corresponding abundances (non‑negative integers or floats, e.g., specimen counts or relative percentages). The tool requires at least one species and allows up to 30 species. The user can also select whether abundance input is absolute counts or percentages (if percentages, they are normalized to sum to 1.0). The core calculation proceeds as follows: sum abundances to get total N (if counts) or total fraction (if percentages). Compute number of species S. For each species i, calculate proportion p_i = abundance_i / total. Shannon index H' = -Σ(p_i * ln(p_i)) (using natural log; if any p_i = 0, treat p_i*ln(p_i)=0). Simpson's index D = Σ(p_i^2) (the dominance measure); the tool also reports 1-D (the Simpson diversity) and 1/D (the inverse Simpson). Pielou's evenness J' = H' / ln(S) (only defined if S>1; if S=1, J'=1). The Gradio UI consists of a 'Species Abundance' data table (DataFrame editor) with columns 'Species' (text) and 'Abundance' (number), plus a radio button to choose between 'Counts' and 'Percentages'. A 'Compute' button triggers the calculation. Outputs: a set of numeric readouts (large, clear numbers) for S, N (total count or total %, depending on input), H', D, 1-D, 1/D, and J'. Additionally, a bar plot shows each species abundance as a bar, with species names on the x-axis and abundance on the y-axis, sorted from highest to lowest. Optionally, a 'Download Results' button exports the output numbers and the plot as a CSV and PNG, respectively. No AI/ML component is used; it is a pure statistical calculation.",
+    "image_prompt": "An illustration of a neatly arranged grid of different fossil specimens (ammonite, trilobite, leaf, shark tooth) on a lab table, with a colorful bar chart overlay showing species abundance, clean professional scientific illustration style, wide banner composition.",
+    "slug": "paleodiversity-index-calculator",
+    "module_name": "paleodiversity_index_calculator",
+    "repo_url": "https://github.com/Nora-Research-Lab/paleodiversity-index-calculator",
+    "shipped_at": "2026-10-02T00:19:37.667021Z"
   }
 ]
